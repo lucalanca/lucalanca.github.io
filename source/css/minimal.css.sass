@@ -1,0 +1,37 @@
+@import "compass"
+@import "susy"
+
+$total-columns  : 12
+$column-width   : 4em
+$gutter-width   : 1em
+$grid-padding   : $gutter-width
+
+@import url(http://fonts.googleapis.com/css?family=Molengo)
+@import url(http://fonts.googleapis.com/css?family=Lekton:400,700,400italic)
+
+#wrapper
+	+container
+	// +susy-grid-background
+	header, footer
+		clear: both
+	#content, header, footer
+		+squish(2,2)
+		+span-columns(8, 12)
+
+h1 
+	font-family: 'Molengo', Georgia, Times, serif
+	font-size: 56px
+	line-height: 80px
+p
+	font-family: 'Lekton', Helvetica, Arial, sans-serif
+	font-size: 16px
+	line-height: 25px
+
+a
+	+hover-link
+	+link-colors(#7A666A, #7A666A, #7A666A, #7A666A, #7A666A)
+
+::selection
+	background: #7A666A
+::-moz-selection
+	background: #7A666A
