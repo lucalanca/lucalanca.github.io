@@ -3,10 +3,10 @@
 
 
 /* TEAM */
-  <your title>: <your name>
+  João Figueiredo
   Site:
-  Twitter:
-  Location:
+  Twitter: @lucalanca
+  Location: Porto, Portugal
 
 /* THANKS */
   Names (& URL):

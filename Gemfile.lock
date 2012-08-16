@@ -125,4 +125,5 @@ DEPENDENCIES
   middleman (~> 3.0.0)
   middleman-favicon-maker
   middleman-smusher
+  sass
   susy (~> 1.0.rc.3)

@@ -1,5 +1,13 @@
-<p>Enjoy this <strong>side</strong> of the <em>interwebz</em>. Since you're here, let's sum me up.</p>
-<p>I'm a soon-to-be software engineer and enterpreneur wannabe. You can reach me at <a href='http://www.twitter.com/lucalanca'>Twitter</a>, <a href='http://www.facebook.com/lucalanca'>Facebook</a>, <a href='https://github.com/lucalanca'>Github</a>, <a href='http://www.linkedin.com/profile/view?id=156802495'>Linkedin</a>, <a href='http://www.flickr.com/lucalanca'>Flickr</a> or <a href='http://vimeo.com/user4848360'>Vimeo</a>.</p>
-
-<p>If want to know more go <a href='/about'>here</a> or grab my <em>CV</em> <a href='#'>here</a>. To know what I&#8217;m up to, check <a href='/projects'>this</a> out.</p>
-
+<div id="timeline-wrapper" class="content">
+  	<% data.timeline.hello.each do |f| %>
+  		<div class="timeline-entry">
+			<span class="timeline-date <% if f.bullet %>bullet<% end %>"><%= f.date %></span>
+			<div class="timeline-text">
+				<h4><%= escape_html(f.title) %></h4>
+				<% if f.text %>
+				<p><%= escape_html(f.text) %></p>
+				<% end %>
+			</div>
+		</div>
+  	<% end %>
+</div>

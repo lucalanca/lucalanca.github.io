@@ -1,0 +1,4 @@
+hello:
+  - {date: 1990, title: "Birth"}
+  - {date: 2008, title: "Enrolls on FEUP", text: "I was born an healty-small-baby", bullet: true}
+  - {date: 2011, title: "Enrolls on TU Wien", text: "I choose Vienna as my ERASMUS city. It was awesome."}

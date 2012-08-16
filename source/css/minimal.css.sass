@@ -1,8 +1,9 @@
 @import "compass"
+@import "compass/layout"
 @import "susy"
 
 $total-columns  : 12
-$column-width   : 4em
+$column-width   : 3em
 $gutter-width   : 1em
 $grid-padding   : $gutter-width
 
@@ -11,12 +12,31 @@ $grid-padding   : $gutter-width
 
 #wrapper
 	+container
-	// +susy-grid-background
+	+susy-grid-background
 	header, footer
 		clear: both
-	#content, header, footer
+	+sticky-footer(54px, "#wrapper", ".content, .content-large", "footer")
+	.content, header
 		+squish(2,2)
 		+span-columns(8, 12)
+	.content-large
+		+span-columns(12, 12)
+	footer
+		position: absolute
+		bottom: 0
+
+	.cv-zone
+		+span-columns(12, 12)
+		margin-bottom: 20px
+		.cv-header
+			+pre(1)
+			+span-columns(2, 12)
+			text-align: right
+			h4
+				margin-right: 20px
+		.cv-content
+			+span-columns(8, 12)
+			+post(1)
 
 h1 
 	font-family: 'Molengo', Georgia, Times, serif
@@ -26,12 +46,30 @@ p
 	font-family: 'Lekton', Helvetica, Arial, sans-serif
 	font-size: 16px
 	line-height: 25px
+span
+	font-family: 'Molengo', Georgia, Times, serif
 
 a
 	+hover-link
 	+link-colors(#7A666A, #7A666A, #7A666A, #7A666A, #7A666A)
 
 ::selection
-	background: #7A666A
+	background: rgba(0,0,0,0.1)
 ::-moz-selection
-	background: #7A666A
+	background: rgba(0,0,0,0.1)
+
+#timeline-wrapper
+	margin-top: 30px
+	border-left: 15px rgba(0,0,0,0.1) solid
+	.timeline-entry
+		clear: both
+		.timeline-date
+			+span-columns(1,8)
+			margin-left: -100px
+			padding: 25px 30px 0 30px
+			height: 46px
+		.bullet
+			+background(url("../img/timeline-bullet.png") no-repeat 68px)	
+		.timeline-text
+			+span-columns(6,8)
+			padding-top: 5px

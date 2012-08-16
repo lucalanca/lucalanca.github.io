@@ -21,7 +21,13 @@
 # page "/path/to/file.html", :layout => false
 # 
 # With alternative layout
-page "/index.html", :layout => :h5b_layout
+pages = ["/index.html", "/cv.html"]
+with_layout :h5b_layout do
+	pages.each do |p|
+		page p
+	end	
+end
+
 # 
 # A path which all have the same layout
 # with_layout :admin do
@@ -48,9 +54,7 @@ page "/index.html", :layout => :h5b_layout
 # end
 
 set :css_dir, 'css'
-
 set :js_dir, 'js'
-
 set :images_dir, 'img'
 
 # Build-specific configuration
