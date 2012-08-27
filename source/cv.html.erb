@@ -1,12 +1,25 @@
 <div class="content-large">
 	<div class="cv-zone">
 		<div class="cv-header">
-			<h4>Profile</h4>
+			<h4>Education</h4>
 		</div>
 		<div class="cv-content">
-			<p>I'm a technology enthusiast, passionate not only about functional pieces of code, but also deeply concerned with clean, readable code, and the use of standards and software patterns.</p>
-			<p>I try to extend the quality of the things I make - good coding - to the final product, which usually is revealed in a rich user experience and carefully thought user interfaces.</p>
-			<p>I'm also into entrepreneurship. To learn more about the subject, I often go to talks and conferences, and submit ideas to contests (3DS Coimbra, iUP25k, 3DS Porto). That gave me public speaking experience and the ability to perform non-boring and objective pitches.</p>
+			<ul>
+				<% data.cv.education.each do |entry| %>
+				<li>
+					<p><span class="time"><%= entry.date %></span><br>
+						<span class="highlight">
+							<% if entry.institutionURL %>
+								<%= link_to entry.institution, entry.institutionURL %><br>
+							<% else %>
+								<%= entry.institution %><br>
+							<% end %>
+						</span>
+						<small><%= entry.title %></small>
+					</p>
+				</li>
+				<% end %>
+			</ul>
 		</div>
 	</div>
 	<div class="cv-zone">
@@ -15,23 +28,21 @@
 		</div>
 		<div class="cv-content">
 			<ul>
-				<li><p>Web Developer, Freelancer 2010 - present</p></li>
-				<li><p>Web Developer, Freelancer 2010 - present</p></li>
-				<li><p>Web Developer, Freelancer 2010 - present</p></li>
-				<li><p>Web Developer, Freelancer 2010 - present</p></li>
-			</ul>
-		</div>
-	</div>
-
-	<div class="cv-zone">
-		<div class="cv-header">
-			<h4>Education</h4>
-		</div>
-		<div class="cv-content">
-			<ul>
-				<li><p>Faculdade de Engenharia da Universidade do Porto (Porto, Portugal)</p></li>
-				<li><p>Technische Universitat Wien (Vienna, Austria)</p></li>
-				<li><p>Escola Secundaria de Aguas Santas / Colegio Ellen Key</p></li>
+				<% data.cv.experience.each do |entry| %>
+				<li>
+					<p><span class="time"><%= entry.date %></span><br>
+						<span class="highlight">
+							<%= entry.position %>, 
+							<% if entry.companyURL %>
+								<%= link_to entry.company, entry.companyURL %><br>
+							<% else %>
+								<%= entry.company %><br>
+							<% end %>
+						</span>
+						<small><%= entry.description %></small>
+					</p>
+				</li>
+				<% end %>
 			</ul>
 		</div>
 	</div>
@@ -41,12 +52,10 @@
 			<h4>Some things I can do</h4>
 		</div>
 		<div class="cv-content">
-			<ul>
-				<li><p>Web Development</p></li>
-				<li><p>Mobile Development</p></li>
-				<li><p>UX</p></li>
-				<li><p>Ball Juggling</p></li>
-				<li><p style="text-decoration: line-through;">Make you laugh</p></li>
+			<ul class="columns">
+				<% data.cv.skills.each_with_index do |entry, i| %>
+				<li><p class="<%= last_index(data.cv.skills, i) %>"><%= entry %></p></li>
+				<% end %>
 			</ul>
 		</div>
 	</div>

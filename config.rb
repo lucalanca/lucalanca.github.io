@@ -1,3 +1,34 @@
+@mainlayout = "layout/h5b_layout"
+with_layout @mainlayout do
+	page "/index.html"
+	page "/cv.html"
+	page "/projects.html"
+	page "/timeline.html"
+	page "/blog.html"
+
+end
+###
+# Blog settings
+###
+activate :blog do |blog|
+  blog.permalink = ":title"
+  blog.sources = ":year-:month-:day-:title.html"
+  blog.prefix = "blog"
+  blog.layout = "blog/layout"
+
+  # blog.taglink = "tags/:tag.html"
+  # blog.summary_separator = "/(READ MORE)/"
+  # blog.summary_length = 250
+  # blog.year_link = ":year.html"
+  # blog.month_link = ":year/:month.html"
+  # blog.day_link = ":year/:month/:day.html"
+  # blog.default_extension = ".markdown"
+
+
+  blog.tag_template = "tag.html"
+  blog.calendar_template = "calendar.html"
+end
+page "/feed.xml", :layout => :false
 ### 
 # Compass
 ###
@@ -21,13 +52,7 @@
 # page "/path/to/file.html", :layout => false
 # 
 # With alternative layout
-pages = ["/index.html", "/cv.html"]
-with_layout :h5b_layout do
-	pages.each do |p|
-		page p
-	end	
-end
-
+# page "/path/to/file.html", :layout => :otherlayout
 # 
 # A path which all have the same layout
 # with_layout :admin do
@@ -44,18 +69,20 @@ end
 ###
 
 # Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
+activate :automatic_image_sizes
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def last_index(arr, idx)
+  	p "idx: " + idx.to_s
+  	p "arr: " + arr.count.to_s
+    idx == arr.count - 1 ? "line-through" : nil
+  end
+end
 
 set :css_dir, 'css'
-set :js_dir, 'js'
-set :images_dir, 'img'
+set :js_dir, 'img'
+set :images_dir, 'js'
 
 # Build-specific configuration
 configure :build do

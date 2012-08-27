@@ -1,0 +1,56 @@
+education:
+  - {
+  		date: 2008 - 2013,
+  		institution: Faculdade de Engenharia da Universidade do Porto,
+  		institutionURL: "http://sigarra.up.pt/feup_uk/",
+  		title: "(MSc + BSc) Software Engineering"
+  	}
+  - {
+  		date: 2011 - 2012,
+  		institution: "Vienna University of Technology",
+  		institutionURL: "http://www.tuwien.ac.at/en/",
+  		title: "MSc Software Engineering (ERASMUS)"
+  	}
+  - {
+  		date: 2002 - 2008,
+  		institution: "Escola Secundaria de Aguas Santas / Colegio Ellen Key",
+  		title: "High School"
+  	}
+experience:
+  - {
+  		date: 2008 - 2012,
+  		position: Web Developer,
+  		company: Freelancer,
+  		companyLocation: "Porto, Portugal",
+  		description: "I've been applying my web development and web design knowledge in small/medium projects either for local companies or for personal usage. During this time, I also learned how to deal with tough clients."
+  	}
+  - {
+  		date: 2011,
+  		position: Volunteer,
+  		company: Startup Week 2011,
+  		companyURL: "http://www.startupweek2011.com/",
+  		companyLocation: "Vienna, Austria",
+  		description: "I had the opportunity of being behind one of the biggest events about entrepreneurship in Europe. I helped the organization in the media coverage of the event (photography)."
+  	}
+  - {
+  		date: 2011,
+  		position: Volunteer,
+  		company: TEDxVienna,
+  		companyURL: "http://www.tedxvienna.at/",
+  		companyLocation: "Vienna, Austria",
+  		description: "I helped building the mobile application of the event, which was a great tool to get more sponsorships and post-event enthusiasm."
+  	}
+  - {
+      date: 2012,
+      position: Student Volunteer,
+      company: Agile Portugal 2012,
+      companyURL: "http://2012.agilept.org/",
+      companyLocation: "Porto, Portugal",
+      description: "I helped here and there to make sure the event (dedicated to agile software development) went smooth."
+    }
+skills:
+ - Web Development
+ - Mobile Development
+ - UX
+ - Ball Juggling
+ - Make you laugh

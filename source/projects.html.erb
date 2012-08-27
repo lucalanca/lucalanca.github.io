@@ -1,0 +1,16 @@
+<div class="content-large">
+	<ul id="projects-list">
+		<% data.projects.projects.each do |p| %>
+			<li class="project-wrapper">
+				<%= image_tag lorem.image('130x150') %>
+				<h4><%= p.title %></h4>
+				<p><%= lorem.sentence %></p>
+				<p><strong>Technologies:</strong><br>
+					<%= image_tag "http://www.livehost.co.nz/images/rails-icon.png" %> Ruby on Rails<br>
+					<%= image_tag "http://media.e2save.com/website_engine/images/www/features_icons/android_icon.png" %> Android<br>
+					<%= image_tag "http://www.dotnetage.com/webshared/home/icons/icon_html5_32.gif" %> HTML5<br>
+				</p>
+			</li>
+		<% end %>
+	</ul>
+</div>
