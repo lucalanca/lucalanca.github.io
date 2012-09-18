@@ -11,15 +11,16 @@
 		padding-top: 8px
 		ul
 			+no-bullets
+			padding: 0
 			&.columns
 				@include column-count(2)
-			padding: 0
+				margin-top: 0px
 			li
 				padding-left: 10px
-				border-left: 5px solid $color1
+				border-left: 5px solid $highlightColor
 				&:hover
-					border-color: $color3
+					border-color: darken($highlightColor, 20%)
 		.time
 			font-size: 16px
 		.highlight
-			color: $color1
+			color: $highlightColor

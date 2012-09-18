@@ -1,9 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Molengo)
-@import url(http://fonts.googleapis.com/css?family=Lekton:400,700,400italic)
-@import url(http://fonts.googleapis.com/css?family=Oswald)
-@import url(http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700)
-@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic)
-@import url(http://fonts.googleapis.com/css?family=Cuprum:400,700)
+// @import url(http://fonts.googleapis.com/css?family=Molengo)
+// @import url(http://fonts.googleapis.com/css?family=Lekton:400,700,400italic)
+// @import url(http://fonts.googleapis.com/css?family=Oswald)
+// @import url(http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700)
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,400italic)
+@import url(http://fonts.googleapis.com/css?family=Cuprum:700)
 
 
 
@@ -42,16 +42,16 @@
 
 h1, h2, h3, h4, h5, h6
 	+cuprum
-	color: $color1
+	color: $highlightColor
 	font-height: 700
 p, a, li, blockquote, span
 	+ptSans
-	color: rgba(0,0,0,0.6)
+	color: $mainColor
 	font-height: 400
 a
 	+unstyled-link
-	+link-colors($color1, $color3, $color1, $color1, $color2)
+	+link-colors($highlightColor, $highlightColor, $highlightColor, $highlightColor, $highlightColor)
 	+trans(all, .2ss, ease-in)
 	&:hover
-		border-bottom: 2px solid $color2
+		border-bottom: 2px solid $highlightColor
 
