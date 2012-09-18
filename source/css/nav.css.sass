@@ -1,0 +1,19 @@
+// @mixin nav-typography
+// 	+font1
+// 	font-size: 12px
+// 	text-transform: uppercase
+// 	text-align: center
+// 	color: rgba(0,0,0,0.3)
+
+$nav-size: 32px
+header
+	+span-columns(8,12)
+	+squish(2,2)
+	padding-top: 20px
+	nav
+		text-align: center
+		+inline-block-list
+		li
+			margin-left: 30px
+		&:first-child
+			margin-left: 0

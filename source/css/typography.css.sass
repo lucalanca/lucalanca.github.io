@@ -1,0 +1,57 @@
+@import url(http://fonts.googleapis.com/css?family=Molengo)
+@import url(http://fonts.googleapis.com/css?family=Lekton:400,700,400italic)
+@import url(http://fonts.googleapis.com/css?family=Oswald)
+@import url(http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700)
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic)
+@import url(http://fonts.googleapis.com/css?family=Cuprum:400,700)
+
+
+
+
+
+@mixin font1
+	font-family: 'Molengo', Georgia, Times, serif
+@mixin font2
+	font-family: 'Vollkorn', Helvetica, Arial, sans-serif
+
+@mixin ptSans
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif
+
+@mixin vollkorn
+	font-family: 'Vollkorn', Helvetica, Arial, sans-serif
+
+@mixin cuprum
+	font-family: 'Cuprum', Helvetica, Arial, sans-serif
+	
+
+@mixin hide-text
+	text-indent: 100%
+	white-space: nowrap
+	overflow: hidden
+
+@mixin hide-text2
+	text-indent: -9999px
+
+@mixin size($w, $h)
+	width: $w
+	height: $h
+@mixin trans($pr,$ti,$fu)
+	+transition-property($pr)
+	+transition-duration($ti)
+	+transition-timing-function($fu)	
+
+h1, h2, h3, h4, h5, h6
+	+cuprum
+	color: $color1
+	font-height: 700
+p, a, li, blockquote, span
+	+ptSans
+	color: rgba(0,0,0,0.6)
+	font-height: 400
+a
+	+unstyled-link
+	+link-colors($color1, $color3, $color1, $color1, $color2)
+	+trans(all, .2ss, ease-in)
+	&:hover
+		border-bottom: 2px solid $color2
+
