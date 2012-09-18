@@ -1,16 +1,25 @@
-<div class="content-large">
-	<ul id="projects-list">
-		<% data.projects.projects.each do |p| %>
-			<li class="project-wrapper">
-				<%= image_tag lorem.image('130x150') %>
-				<h4><%= p.title %></h4>
-				<p><%= lorem.sentence %></p>
-				<p><strong>Technologies:</strong><br>
-					<%= image_tag "http://www.livehost.co.nz/images/rails-icon.png" %> Ruby on Rails<br>
-					<%= image_tag "http://media.e2save.com/website_engine/images/www/features_icons/android_icon.png" %> Android<br>
-					<%= image_tag "http://www.dotnetage.com/webshared/home/icons/icon_html5_32.gif" %> HTML5<br>
-				</p>
-			</li>
-		<% end %>
-	</ul>
-</div>
+<section id="projects-list" class="content-large">
+	<% data.projects.projects.each do |p| %>
+		<section class="project-wrapper">
+			<section class="project-description">
+				<div class="description-zone">
+					<span class="label">Project</span><br>
+					<span class="title-text"><%= p.title %></span>
+				</div>
+				
+				<div class="description-zone">
+					<span class="label">Description</span><br>
+					<span class="main-text"><%= p.description %></span>
+				</div>
+				
+				<div class="description-zone">
+					<span class="label">Technologies Used</span><br>
+					<span class="main-text"><%= p.technologies %></span>	
+				</div>
+			</section>
+			<section class="project-images">
+				<img src="http://placehold.it/445x500">
+			</section>			
+		</section>
+	<% end %>
+</section>

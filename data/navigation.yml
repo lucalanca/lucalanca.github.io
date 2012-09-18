@@ -1,6 +1,6 @@
 nav:
   - {text: "home", link: "index.html", class: "home" }
   - {text: "resume", link: "cv.html", class: "cv" }
-  - {text: "timeline", link: "timeline.html", class: "timeline" }
+  # - {text: "timeline", link: "timeline.html", class: "timeline" }
   - {text: "projects", link: "projects.html", class: "projects" }
-  - {text: "blog", link: "blog.html", class: "blog" }
+  # - {text: "blog", link: "blog.html", class: "blog" }

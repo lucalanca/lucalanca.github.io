@@ -1,34 +1,38 @@
-@mainlayout = "layout/h5b_layout"
+@mainlayout = "layouts/h5b_layout"
 with_layout @mainlayout do
 	page "/index.html"
 	page "/cv.html"
 	page "/projects.html"
 	page "/timeline.html"
-	page "/blog.html"
+	# page "/blog.html"
 
 end
 ###
 # Blog settings
 ###
-activate :blog do |blog|
-  blog.permalink = ":title"
-  blog.sources = ":year-:month-:day-:title.html"
-  blog.prefix = "blog"
-  blog.layout = "blog/layout"
+# activate :blog do |blog|
+#   blog.permalink = ":title"
+#   blog.sources = ":year-:month-:day-:title.html"
+#   blog.prefix = "blog"
+#   blog.layout = "blog/layout"
 
-  # blog.taglink = "tags/:tag.html"
-  # blog.summary_separator = "/(READ MORE)/"
-  # blog.summary_length = 250
-  # blog.year_link = ":year.html"
-  # blog.month_link = ":year/:month.html"
-  # blog.day_link = ":year/:month/:day.html"
-  # blog.default_extension = ".markdown"
+#   # blog.taglink = "tags/:tag.html"
+#   # blog.summary_separator = "/(READ MORE)/"
+#   # blog.summary_length = 250
+#   # blog.year_link = ":year.html"
+#   # blog.month_link = ":year/:month.html"
+#   # blog.day_link = ":year/:month/:day.html"
+#   # blog.default_extension = ".markdown"
 
 
-  blog.tag_template = "tag.html"
-  blog.calendar_template = "calendar.html"
-end
-page "/feed.xml", :layout => :false
+#   blog.tag_template = "tag.html"
+#   blog.calendar_template = "calendar.html"
+# end
+# page "/feed.xml", :layout => :false
+# page "/tag.html", :layout => :false
+
+
+
 ### 
 # Compass
 ###

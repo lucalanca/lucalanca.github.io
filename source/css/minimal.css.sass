@@ -18,6 +18,12 @@ $color3: #565D85
 @import url(http://fonts.googleapis.com/css?family=Molengo)
 @import url(http://fonts.googleapis.com/css?family=Lekton:400,700,400italic)
 @import url(http://fonts.googleapis.com/css?family=Oswald)
+@import url(http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700)
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic)
+@import url(http://fonts.googleapis.com/css?family=Cuprum:400,700)
+
+body
+	// +background(url('../img/fronha.png') no-repeat 90% 0%)
 
 #wrapper
 	+container
@@ -55,20 +61,20 @@ $color3: #565D85
 				font-size: 16px
 			.highlight
 				color: $color1
-	#projects-list
-		+no-bullets
-		+span-columns(12,12)
-		+background(green)
-		.project-wrapper
-			margin-top: 30px
-			+span-columns(6,12)
-			+nth-omega(2n)
-			+background(red)
-			
 @mixin font1
 	font-family: 'Molengo', Georgia, Times, serif
 @mixin font2
-	font-family: 'Lekton', Helvetica, Arial, sans-serif
+	font-family: 'Vollkorn', Helvetica, Arial, sans-serif
+
+@mixin ptSans
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif
+
+@mixin vollkorn
+	font-family: 'Vollkorn', Helvetica, Arial, sans-serif
+
+@mixin cuprum
+	font-family: 'Cuprum', Helvetica, Arial, sans-serif
+	
 
 @mixin hide-text
 	text-indent: 100%
@@ -87,11 +93,13 @@ $color3: #565D85
 	+transition-timing-function($fu)	
 
 h1, h2, h3, h4, h5, h6
-	+font1
+	+cuprum
 	color: $color1
+	font-height: 700
 p, a, li, blockquote, span
-	+font2
+	+ptSans
 	color: rgba(0,0,0,0.6)
+	font-height: 400
 a
 	+unstyled-link
 	+link-colors($color1, $color3, $color1, $color1, $color2)
@@ -141,3 +149,34 @@ header
 		.timeline-text
 			+span-columns(6,8)
 			padding-top: 5px
+
+#projects-list
+	.project-wrapper
+		+span-columns(12,12)
+		margin-top: 25px
+		margin-bottom: 25px
+		.project-description
+			+span-columns(4,12)
+			.description-zone
+				margin-bottom: 40px
+			span.label
+				+ptSans
+				font-size: 15px
+				line-height: 24px
+				font-height: 400
+				font-style: italic
+				color: rgba(0,0,0,0.6)
+			span.title-text
+				+cuprum
+				font-size: 30px
+				line-height: 30px
+				font-weight: 700
+			span.main-text
+				+ptSans
+				color: rgba(0,0,0,0.9)
+				font-size: 15px
+				line-height: 22px
+				font-weight: 400
+		.project-images
+			+span-columns(8 omega,12)
+			+background(green)
