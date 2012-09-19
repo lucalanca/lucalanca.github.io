@@ -5,7 +5,6 @@ with_layout @mainlayout do
 	page "/projects.html"
 	page "/timeline.html"
 	# page "/blog.html"
-
 end
 ###
 # Blog settings
@@ -78,8 +77,6 @@ activate :automatic_image_sizes
 # Methods defined in the helpers block are available in templates
 helpers do
   def last_index(arr, idx)
-  	p "idx: " + idx.to_s
-  	p "arr: " + arr.count.to_s
     idx == arr.count - 1 ? "line-through" : nil
   end
 end
@@ -88,13 +85,15 @@ set :css_dir, 'css'
 set :js_dir, 'img'
 set :images_dir, 'js'
 
+Encoding.default_external = 'utf-8'
+
 # Build-specific configuration
 configure :build do
   activate :minify_css
   activate :minify_javascript
-  activate :cache_buster
+  # activate :cache_buster
   
-  require "middleman-smusher"
-  activate :smusher
-  activate :favicon_maker
+  # require "middleman-smusher"
+  # activate :smusher
+  # activate :favicon_maker
 end
