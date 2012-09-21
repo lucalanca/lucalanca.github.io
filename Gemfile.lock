@@ -101,6 +101,7 @@ GEM
       multi_json (~> 1.3)
     url_mount (0.2.1)
       rack
+    yajl-ruby (1.1.0)
 
 PLATFORMS
   ruby
@@ -109,3 +110,4 @@ DEPENDENCIES
   middleman (~> 3.0.0)
   sass
   susy (~> 1.0.rc.3)
+  yajl-ruby

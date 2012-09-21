@@ -97,3 +97,4 @@ configure :build do
   # activate :smusher
   # activate :favicon_maker
 end
+require 'yajl/json_gem'

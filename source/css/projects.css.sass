@@ -1,10 +1,18 @@
+.loading
+	margin-top: 20px
+	+span-columns(2,12)
+	+squish(5,5)
+	img
+		margin-left: 20px
 #projects-list
 	.project-wrapper
 		+span-columns(12,12)
 		margin-top: 25px
-		margin-bottom: 200px
+		margin-bottom: 50px
 		.project-description
-			+span-columns(4,12)
+			+span-columns(12,12)
+			+at-breakpoint(45em 12)
+				+span-columns(4,12)
 			.description-zone
 				margin-bottom: 40px
 			span.label
@@ -25,11 +33,17 @@
 				font-size: 15px
 				line-height: 24px
 				font-weight: 400
+			a:hover
+				border-bottom: 1px solid $mainColor	
 		.project-images
-			+span-columns(8 omega,12)
+			+span-columns(12,12)
+			+at-breakpoint(45em 12)
+				+span-columns(8 omega,12)
+			.gallery
+				width: 499px
 			.flex-control-nav
 				width: 31em
 				position: relative
-				margin-top: -40px
+				margin-top: -30px
 				
 				

@@ -1,3 +1,7 @@
+<div class="loading">
+	<img src="img/loading.gif">
+</div>
+
 <section id="projects-list" class="content-large">
 	<% data.projects.projects.each do |p| %>
 		<section class="project-wrapper">
@@ -11,6 +15,14 @@
 					<span class="label">Description</span><br>
 					<span class="main-text"><%= p.description %></span>
 				</div>
+				<% if p.members %>
+				<div class="description-zone">
+					<span class="label">Team</span><br>
+					<% p.members.each do |m|%>
+						<a href="<%= m.link %>" target="_blank"><span class="main-text"><%= m.name %></span></a><br>
+					<% end %>
+				</div>
+				<% end %>
 				
 				<div class="description-zone">
 					<span class="label">Technologies Used</span><br>
@@ -25,13 +37,22 @@
 			<section class="project-images">
 				<div class="gallery">
 					<ul class="slides">
-    					<li><img src="http://www.blogdicas.com/wp-content/uploads/2011/09/Celulares-da-LG-496x400.jpg" /></li>
+						<% if p.media %>
+							<% p.media.each do |m|%>
+								<li>
+								<% if m.type == "image" %>
+									<img src="<%= m.ref %>" width="494" style="border: 1px solid rgb(200,200,200);"/>
+								<% elsif m.type == "video" %>
+									<iframe id="player_1" src="http://player.vimeo.com/video/<%= m.ref %>?api=1&amp;player_id=player_2" width="496" height="396" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+								<% end %>
+								</li>
+							<% end %>
+						<% end %>
+						
+
     					<!-- <li>
-              				<iframe id="player_1" src="http://player.vimeo.com/video/39683393?api=1&amp;player_id=player_1" width="496" height="394" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+              				
   	    				</li> -->
-    					<li><img src="http://www.blogdicas.com/wp-content/uploads/2011/09/Celulares-da-LG-496x400.jpg" /></li>
-    					<li><img src="http://www.blogdicas.com/wp-content/uploads/2011/09/Celulares-da-LG-496x400.jpg" /></li>
-    					<li><img src="http://www.blogdicas.com/wp-content/uploads/2011/09/Celulares-da-LG-496x400.jpg" /></li>
   				</ul>
   			</div>				
 			</section>			

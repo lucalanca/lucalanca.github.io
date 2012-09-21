@@ -48,6 +48,22 @@ experience:
       companyLocation: "Porto, Portugal",
       description: "I helped here and there to make sure the event (dedicated to agile software development) went smooth."
     }
+  - {
+      date: 2012,
+      position: Reseacher,
+      company: INESC,
+      companyURL: "http://www2.inescporto.pt/",
+      companyLocation: "Porto, Portugal",
+      description: "As part of a research grant, I'm exploring the use of linear algebra to generate cross tabulations in OLAP databases."
+    }
+  - {
+      date: 2012,
+      position: Organizer,
+      company: Beta Talks Porto,
+      companyURL: "http://beta-i.pt/betatalk/",
+      companyLocation: "Porto, Portugal",
+      description: "I'm part of the organization of this monthly event in Porto. Two entrepreneurs share their life experiences in a 15-minute talk, followed by questions and discussion."
+    }
 skills:
  - Web Development
  - Mobile Development
