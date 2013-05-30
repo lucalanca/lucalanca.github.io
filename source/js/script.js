@@ -27,8 +27,35 @@ $(window).load( function(){
         slideshow: false,
       });
     });
+  }
+
+
+  $('#auth').click(function(e){
+    auth(true);
+  });
+});
+
+function auth(redirect = false){
+  var statesdemo = {
+      state0: {
+        title: 'Authentication',
+        html:'<label>password <input type="password" name="password" value=""></label>',
+        buttons: { Next: 1 },
+        focus: "input[name='password']",
+        submit:function(e,v,m,f){ 
+          console.log(f);
+          if(f.password === 'vicepresident'){
+            window.location = 'thesis-admin.html';
+          }
+          e.preventDefault();
+        }
+      }
+    };
+
+    $.prompt(statesdemo);
     
-    
-  }  
-}); 
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+}
 
