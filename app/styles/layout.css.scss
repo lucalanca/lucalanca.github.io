@@ -1,0 +1,42 @@
+.line-through {
+	text-decoration: line-through;
+}
+	
+
+::selection, ::-moz-selection {
+	background: $highlightColor
+}
+
+
+
+.container {
+	@include outer-container;
+}
+
+.page-title {
+	text-align: center;
+}
+
+$mobile: new-breakpoint(min-width 320px 4);
+$tablet: new-breakpoint(min-width 480px 10);
+$desktop: new-breakpoint(min-width 1050px 12);
+$padding: 15px;
+
+.intro-container {
+	padding: 20px;
+	@include media($mobile) {
+		margin-top: 10px;
+		@include span-columns(4);
+	}
+	@include media(new-breakpoint(min-width 580px 10)) {
+		margin-top: 20px;
+		@include span-columns(8);
+		@include shift(1);
+	}	
+	@include media($desktop) {
+		margin-top: 30px;
+		@include span-columns(8);
+		@include shift(2);
+	}
+	h1 { margin-bottom: 0;}
+}

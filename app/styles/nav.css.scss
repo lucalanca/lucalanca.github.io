@@ -1,0 +1,35 @@
+nav {
+	text-align: center;
+	overflow: hidden;
+	display: block;
+	padding: 0 10px 0 10px;
+	background: $lightGreyColor;
+	border-top: 4px solid $highlightColor;
+	li {
+		float: left;
+		list-style: none;
+		margin-right: 30px;
+		padding: 6px 10px;
+		vertical-align: middle;
+		font-size: 22px;
+		a {
+		    padding: 2px 0;
+		    border: 0;
+			&.active, &:hover { border-bottom: 2px solid $highlightColor; }
+		}
+
+	}
+}
+
+// overrides naver defaults
+@media screen and (max-width: 440px) {
+    nav li { 
+    	display: block; 
+    	float: none; 
+    	width: 100%;
+    	overflow: hidden;
+    	padding: 0px;
+    	a { float: left; border-bottom: 2px solid transparent; }
+    	&:last-child { margin-bottom: 10px; }
+    }
+}
