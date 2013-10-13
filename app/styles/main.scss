@@ -3,14 +3,10 @@
 @import "config/typography";
 
 // VENDOR
-@import "../bower_components/normalize-css/normalize.css";
-@import "../bower_components/html5-boilerplate/css/main.css";
 @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "config/grid"; // OVERRIDES NEAT SETTINGS
 @import "../bower_components/neat/app/assets/stylesheets/neat";
 @import "../bower_components/typeplate/scss/typeplate";
-@import "../bower_components/naver/jquery.fs.naver.css";
-
 
 $lh-ratio: 1.625;
 
