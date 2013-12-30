@@ -1,0 +1,51 @@
+.resume {
+  $left-side-width: 100px;
+  $container-width: $main-container-width;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  .resume-item {
+    @extend %clearfix;
+    list-style-type: none;
+    margin: $large-spacing-vertical 0;
+    overflow: hidden;
+
+    p:last-child {
+      margin: 0;
+    }
+  }
+  .resume-item-title {
+    color: $highlight-color;
+    float: left;
+    font-weight: 300;
+    margin: 0;
+    padding: 0 $main-spacing-horizontal;
+    text-align: right;
+    width: $left-side-width;
+  }
+
+  .resume-item-container {
+    @extend %clearfix;
+    float: left;
+    padding: 0 $main-spacing-horizontal;
+    width: $container-width - $left-side-width - (4 * $main-spacing-horizontal);
+  }
+
+  .resume-item-enumerable {
+    border-left: 4px solid $highlight-color;
+    list-style-type: none;
+    margin: $large-spacing-vertical 0;
+    padding: 0 $main-spacing-horizontal;
+
+    p {
+      margin: 0;
+    }
+    &:first-child {
+      margin-top: 0;
+    }
+    &:hover {
+      border-left-color: darken($highlight-color, 15%);
+
+    }
+  }
+}

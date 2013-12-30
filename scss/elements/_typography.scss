@@ -1,0 +1,41 @@
+// //
+// // Typography is specified in here.
+// // 
+
+@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic");
+
+body {
+  font-family: $font-main;
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $font-key;
+  font-weight: 700;
+}
+
+p {
+  font-size: 22px;
+  margin: 0 0 1em;
+}
+
+h1 {
+  color: $highlight-color;
+  font-size: 40px;
+  font-weight: 300;
+  margin-bottom: .605rem;
+}
+
+a {
+  color: $highlight-color;
+  text-decoration: none;
+  &:hover {
+    border-bottom: 2px solid darken($highlight-color, 15%);
+    color: darken($highlight-color, 15%);
+    @include x-transition (all .2s ease-in-out)
+  }
+}

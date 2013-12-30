@@ -1,5 +1,13 @@
-node_modules
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+
+*.sass-cache
+*.sublime-*
+
+components
+css
 dist
-.tmp
-.sass-cache
-app/bower_components
+index.html
+node_modules
+test/coverage
+test/dist
