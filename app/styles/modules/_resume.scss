@@ -1,0 +1,97 @@
+.cv-zone {
+  @include span-columns(10);
+  @include row();
+  margin-bottom: 2*$base-spacing;
+
+  &:last-child { margin-bottom: 0; }
+
+  // LAYOUT
+  .cv-zone-header { @include span-columns(2 of 10); }
+
+  .cv-zone-content { @include span-columns(8 of 10); }
+
+  // STYLING
+  .cv-zone-header {
+    text-align: right;
+
+    .cv-zone-title { font-size: ms(0); }
+  }
+  
+
+  .cv-zone-content {
+
+    p:first-of-type { margin-top: 0; }
+
+    .cv-entry-date {
+      font-size: 80%;
+      display: block;
+    }
+
+    .cv-entry-title, 
+    .cv-skill-set-title {
+      font-size: ms(0);
+      margin-bottom: 0;
+      display: inline;
+      color: $color-text-base;
+    }
+  }
+}
+
+.cv-skill-set {
+  @include span-columns(8 of 8);
+  margin: 0 0 $base-spacing;
+  padding: 0;
+
+  
+
+  // LAYOUT
+  .cv-skill-set-title { @include span-columns(2 of 8); }
+
+  .cv-skill-set-content {
+    @include span-columns(6 of 8);
+  }
+
+  // STYLING
+
+  .cv-skill-set-title { font-size: ms(0); }
+
+  .cv-skill-set-entry {
+    list-style: none;
+    padding: 0 $base-spacing 0 0;
+    font-size: ms(0);
+  }
+
+  .skill-percentage {
+    display: block;
+    height: 1ex;
+    background: $grey-color;
+    border-radius: 1ex;
+    border: 0;
+    margin: ($base-spacing/2) 0 $base-spacing;
+    padding: 0;
+  }
+
+  .p0 { width: 0%; }
+
+  .p10 { width: 10%; }
+
+  .p20 { width: 20%; }
+  
+  .p30 { width: 30%; }
+  
+  .p40 { width: 40%; }
+  
+  .p50 { width: 50%; }
+  
+  .p60 { width: 60%; }
+  
+  .p70 { width: 70%; }
+  
+  .p80 { width: 80%; }
+  
+  .p90 { width: 90%; }
+  
+  .p100 { width: 100%; }
+
+
+}

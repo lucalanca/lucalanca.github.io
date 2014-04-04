@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+// ----------------------
+// == Site settings
+// ----------------------
+
+
+// Spacing
+$base-spacing: 20px;
+
+// Html 5 Element
+$audio-canvas-video: false; // True | False
+
+// Fonts
+$font1: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font2: Georgia, serif;
+
+// = Colors
+// -----------------------------
+
+// Graphic chart
+$red: #df2e30;
+$blue: #1894c4;
+$facebook: #3b5998;
+$twitter: #43bfe1;
+
+$color1: #9ca2c2;
+$color2: #747b9e;
+$color3: #565d85;
+
+$lightgreycolor: #f5f5f5;
+$grey-color: #eee;
+
+$highlightcolor: darken(rgb(161, 190, 230), 20%);
+$maincolor: #222;
+
+// Text
+$color-text-base: #444;
+$base-font-size : 16px;
+$base-line-height: 24px;
+
+// link
+$color-link: $highlightcolor;
+$color-link-hover: darken($color1, 10%);
+
+// Mixin Placeholder
+$color-mixin-placeholder: #cdcdcd;
+
+// Selection
+$color-selection: $color1;
+
+// Btn
+$bg-btn: #555;
+$bg-btn-hover: darken($bg-btn, 10%);
+$clr-btn: #212121;
+$clr-btn-hover: darken($clr-btn, 10%);
+
+// = Grid
+// -----------------------------
+
+// Max width wrapper
+$wrapper-width: pxtoem(1140, 16);
+
+// = Prefix
+// -----------------------------
+
+$prefix-for-webkit:    true !default;
+$prefix-for-mozilla:   true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera:     true !default;
+$prefix-for-spec:      true !default; // required for keyframe mixin
+
+// = Responsive
+// -----------------------------
+
+$width-desktop: 60rem; // 1200/16
+$width-tablet: 36rem; // 992/16
+$width-mobile: 28rem; // 768/16
+
+// Bourbon Neat Breakpoints
+$mobile: new-breakpoint(min-width $width-mobile 4);
+$tablet: new-breakpoint(min-width $width-tablet 8);
+$desktop: new-breakpoint(min-width $width-desktop 12);
+
+

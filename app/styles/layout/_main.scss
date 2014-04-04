@@ -1,0 +1,18 @@
+// ==|====================
+// Layout/Main
+// =======================
+
+// .l-main {
+// }
+
+$max-width: em(900);
+
+.container {
+  @include outer-container;
+  @include row();
+  padding: $base-spacing;
+}
+
+.page-title {
+  text-align: center;
+}

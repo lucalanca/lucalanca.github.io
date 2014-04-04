@@ -1,0 +1,10 @@
+.lined-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    border-left: 5px solid $highlightcolor;
+    padding: 0 $base-spacing; 
+  }
+}

@@ -1,13 +1,9 @@
 {
-  "name": "init",
-  "version": "1.0.2",
-  "main": "",
-  "ignore": [],
+  "name": "website-gulp",
+  "private": true,
   "dependencies": {
-    "jquery": "1.10.2",
-    "normalize-scss": "~2.1.2",
-    "modernizr": "~2.7.1",
-    "requirejs": "~2.1.9",
-    "sass-mixins": "~0.6.0"
-  }
+    "modernizr": "~2.6.2",
+    "jquery": "~1.11.0"
+  },
+  "devDependencies": {}
 }
