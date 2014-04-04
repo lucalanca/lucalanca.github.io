@@ -7,7 +7,6 @@
 components
 css
 dist
-index.html
 node_modules
 test/coverage
 test/dist
