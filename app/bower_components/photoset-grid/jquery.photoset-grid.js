@@ -56,9 +56,9 @@
         
       },
 
-      _callback: function(elem){
+      _callback: function(){
         // Call the optional onComplete event after the plugin has been completed
-        this.options.onComplete(elem);
+        this.options.onComplete();
       },
 
       _setupRows: function(  elem, options ){
@@ -236,7 +236,7 @@
           setupStyles();
 
           // Call _callback which calls the optional onComplete
-          $this._callback(elem);
+          $this._callback();
         });
       }
 
