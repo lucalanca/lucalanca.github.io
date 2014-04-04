@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // If a native exponent function doesnt exist
 // this one is needed.
 @function ms-pow($Base, $Exponent) {
