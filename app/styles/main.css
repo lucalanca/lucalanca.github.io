@@ -728,7 +728,7 @@ nav li a.active, nav li a:hover {
   display: block;
   margin-right: 3.22581%;
   width: 100%;
-  margin: 0 0 20px;
+  margin: 0 0 40px;
   padding: 0;
 }
 .cv-skill-set:last-child {
@@ -758,15 +758,15 @@ nav li a.active, nav li a:hover {
 .cv-skill-set .cv-skill-set-entry {
   list-style: none;
   padding: 0 20px 0 0;
-  font-size: 1.2em;
+  font-size: 80%;
 }
 .cv-skill-set .skill-percentage {
   display: block;
   height: 1ex;
-  background: #eeeeee;
+  background: #5086d1;
   border-radius: 1ex;
   border: 0;
-  margin: 10px 0 20px;
+  margin: 5px 0 10px;
   padding: 0;
 }
 .cv-skill-set .p0 {
