@@ -14,5 +14,11 @@ $max-width: em(900);
 }
 
 .page-title {
-  text-align: center;
+  text-align: left;
+}
+
+@include media($desktop) {
+  .page-title {
+    text-align: center;
+  }
 }

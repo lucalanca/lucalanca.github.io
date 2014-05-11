@@ -291,6 +291,14 @@ input[type="search"]::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   color: #cdcdcd;
 }
+input[type="text"]:-moz-placeholder,
+input[type="email"]:-moz-placeholder,
+input[type="password"]:-moz-placeholder,
+input[type="date"]:-moz-placeholder,
+input[type="search"]:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #cdcdcd;
+}
 input[type="text"]:-ms-input-placeholder,
 input[type="email"]:-ms-input-placeholder,
 input[type="password"]:-ms-input-placeholder,
@@ -460,9 +468,14 @@ h1 {
 }
 
 .page-title {
-  text-align: center;
+  text-align: left;
 }
 
+@media screen and (min-width: 60rem) {
+  .page-title {
+    text-align: center;
+  }
+}
 header {
   background: whitesmoke;
   border-top: 4px solid #5086d1;
@@ -688,25 +701,46 @@ nav li a.active, nav li a:hover {
   float: left;
   display: block;
   margin-right: 2.5641%;
-  width: 17.94872%;
+  width: 100%;
+  display: block;
+  text-align: left;
 }
 .cv-zone .cv-zone-header:last-child {
   margin-right: 0;
+}
+.lt-ie8 .cv-zone .cv-zone-header {
+  zoom: 1;
+}
+.cv-zone .cv-zone-header:before, .cv-zone .cv-zone-header:after {
+  content: "";
+  display: table;
+}
+.cv-zone .cv-zone-header:after {
+  clear: both;
 }
 .cv-zone .cv-zone-content {
   float: left;
   display: block;
   margin-right: 2.5641%;
-  width: 79.48718%;
+  width: 100%;
+  display: block;
 }
 .cv-zone .cv-zone-content:last-child {
   margin-right: 0;
 }
-.cv-zone .cv-zone-header {
-  text-align: right;
+.lt-ie8 .cv-zone .cv-zone-content {
+  zoom: 1;
+}
+.cv-zone .cv-zone-content:before, .cv-zone .cv-zone-content:after {
+  content: "";
+  display: table;
+}
+.cv-zone .cv-zone-content:after {
+  clear: both;
 }
 .cv-zone .cv-zone-header .cv-zone-title {
   font-size: 1.2em;
+  margin-bottom: 0;
 }
 .cv-zone .cv-zone-content p:first-of-type {
   margin-top: 0;
@@ -737,8 +771,8 @@ nav li a.active, nav li a:hover {
 .cv-skill-set .cv-skill-set-title {
   float: left;
   display: block;
-  margin-right: 3.22581%;
-  width: 22.58065%;
+  margin-right: 2.5641%;
+  width: 100%;
 }
 .cv-skill-set .cv-skill-set-title:last-child {
   margin-right: 0;
@@ -746,8 +780,8 @@ nav li a.active, nav li a:hover {
 .cv-skill-set .cv-skill-set-content {
   float: left;
   display: block;
-  margin-right: 3.22581%;
-  width: 74.19355%;
+  margin-right: 2.5641%;
+  width: 100%;
 }
 .cv-skill-set .cv-skill-set-content:last-child {
   margin-right: 0;
@@ -803,6 +837,125 @@ nav li a.active, nav li a:hover {
   width: 100%;
 }
 
+@media screen and (min-width: 36rem) {
+  .cv-zone {
+    float: left;
+    display: block;
+    margin-right: 3.22581%;
+    width: 100%;
+    display: block;
+  }
+  .cv-zone:last-child {
+    margin-right: 0;
+  }
+  .lt-ie8 .cv-zone {
+    zoom: 1;
+  }
+  .cv-zone:before, .cv-zone:after {
+    content: "";
+    display: table;
+  }
+  .cv-zone:after {
+    clear: both;
+  }
+  .cv-zone .cv-zone-header {
+    float: left;
+    display: block;
+    margin-right: 3.22581%;
+    width: 100%;
+  }
+  .cv-zone .cv-zone-header:last-child {
+    margin-right: 0;
+  }
+  .cv-zone .cv-zone-content {
+    float: left;
+    display: block;
+    margin-right: 3.22581%;
+    width: 100%;
+  }
+  .cv-zone .cv-zone-content:last-child {
+    margin-right: 0;
+  }
+
+  .cv-skill-set .cv-skill-set-title {
+    float: left;
+    display: block;
+    margin-right: 3.22581%;
+    width: 22.58065%;
+  }
+  .cv-skill-set .cv-skill-set-title:last-child {
+    margin-right: 0;
+  }
+  .cv-skill-set .cv-skill-set-content {
+    float: left;
+    display: block;
+    margin-right: 3.22581%;
+    width: 74.19355%;
+  }
+  .cv-skill-set .cv-skill-set-content:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 60rem) {
+  .cv-zone {
+    float: left;
+    display: block;
+    margin-right: 2.12766%;
+    width: 100%;
+    display: block;
+  }
+  .cv-zone:last-child {
+    margin-right: 0;
+  }
+  .lt-ie8 .cv-zone {
+    zoom: 1;
+  }
+  .cv-zone:before, .cv-zone:after {
+    content: "";
+    display: table;
+  }
+  .cv-zone:after {
+    clear: both;
+  }
+  .cv-zone .cv-zone-header {
+    float: left;
+    display: block;
+    margin-right: 2.12766%;
+    width: 14.89362%;
+    text-align: right;
+  }
+  .cv-zone .cv-zone-header:last-child {
+    margin-right: 0;
+  }
+  .cv-zone .cv-zone-content {
+    float: left;
+    display: block;
+    margin-right: 2.12766%;
+    width: 82.97872%;
+  }
+  .cv-zone .cv-zone-content:last-child {
+    margin-right: 0;
+  }
+
+  .cv-skill-set .cv-skill-set-title {
+    float: left;
+    display: block;
+    margin-right: 2.5641%;
+    width: 17.94872%;
+  }
+  .cv-skill-set .cv-skill-set-title:last-child {
+    margin-right: 0;
+  }
+  .cv-skill-set .cv-skill-set-content {
+    float: left;
+    display: block;
+    margin-right: 2.5641%;
+    width: 79.48718%;
+  }
+  .cv-skill-set .cv-skill-set-content:last-child {
+    margin-right: 0;
+  }
+}
 .lined-list {
   margin: 0;
   padding: 0;

@@ -6,15 +6,21 @@
   &:last-child { margin-bottom: 0; }
 
   // LAYOUT
-  .cv-zone-header { @include span-columns(2 of 10); }
+  .cv-zone-header { 
+    @include span-columns(10 of 10);
+    @include row();
+    text-align: left;
+  }
 
-  .cv-zone-content { @include span-columns(8 of 10); }
+  .cv-zone-content {
+    @include span-columns(10 of 10);
+    @include row();
+  }
 
   // STYLING
   .cv-zone-header {
-    text-align: right;
 
-    .cv-zone-title { font-size: ms(0); }
+    .cv-zone-title { font-size: ms(0); margin-bottom: 0;}
   }
   
 
@@ -45,10 +51,12 @@
   
 
   // LAYOUT
-  .cv-skill-set-title { @include span-columns(2 of 8); }
+  .cv-skill-set-title {
+    @include span-columns(10 of 10);
+  }
 
   .cv-skill-set-content {
-    @include span-columns(6 of 8);
+    @include span-columns(10 of 10);
   }
 
   // STYLING
@@ -92,6 +100,57 @@
   .p90 { width: 90%; }
   
   .p100 { width: 100%; }
+}
+
+@include media($tablet) {
+
+  .cv-zone {
+    @include span-columns(8);
+    @include row();
+  
+    // LAYOUT
+    .cv-zone-header { 
+      @include span-columns(8 of 8);
+    }
+
+    .cv-zone-content { @include span-columns(8 of 8); }
+
+  }
 
 
+  .cv-skill-set {
+    .cv-skill-set-title { @include span-columns(2 of 8); }
+
+    .cv-skill-set-content {
+      @include span-columns(6 of 8);
+    }
+  }
+
+}
+
+@include media($desktop) {
+
+  .cv-zone {
+    @include span-columns(12);
+    @include row();
+  
+    // LAYOUT
+    .cv-zone-header { 
+      @include span-columns(2 of 12);
+      text-align: right;
+    }
+
+    .cv-zone-content { @include span-columns(10 of 12); }
+
+  }
+
+  // LAYOUT
+  .cv-skill-set {
+    .cv-skill-set-title { @include span-columns(2 of 10); }
+
+    .cv-skill-set-content {
+      @include span-columns(8 of 10);
+    }  
+  }
+  
 }
