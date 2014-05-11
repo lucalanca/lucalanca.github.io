@@ -5,7 +5,7 @@
 .project-container {
 
   @include span-columns(10);
-  margin-bottom: 200px;
+  margin-bottom: 40px;
 
   .project-info-container { @include span-columns(10 of 10); }
 
@@ -39,6 +39,7 @@
 
   .project-container {
     @include span-columns(8);
+    margin-bottom: 50px;
     
     > * { text-align: left; }
     
@@ -51,6 +52,7 @@
 @include media($desktop) {
 
   .project-container {
+    margin-bottom: 200px;
 
     @include span-columns(12);
     

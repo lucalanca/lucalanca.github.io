@@ -562,7 +562,7 @@ nav li a.active, nav li a:hover {
   display: block;
   margin-right: 2.5641%;
   width: 100%;
-  margin-bottom: 200px;
+  margin-bottom: 40px;
 }
 .project-container:last-child {
   margin-right: 0;
@@ -612,6 +612,7 @@ nav li a.active, nav li a:hover {
     display: block;
     margin-right: 3.22581%;
     width: 100%;
+    margin-bottom: 50px;
   }
   .project-container:last-child {
     margin-right: 0;
@@ -640,6 +641,7 @@ nav li a.active, nav li a:hover {
 }
 @media screen and (min-width: 60rem) {
   .project-container {
+    margin-bottom: 200px;
     float: left;
     display: block;
     margin-right: 2.12766%;
