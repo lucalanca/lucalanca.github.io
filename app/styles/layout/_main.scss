@@ -17,8 +17,13 @@ $max-width: em(900);
   text-align: left;
 }
 
+.base-padding {
+  padding: 0 $base-spacing; 
+}
+
 @include media($desktop) {
   .page-title {
+  
     text-align: center;
   }
 }
