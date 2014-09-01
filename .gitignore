@@ -10,3 +10,4 @@ dist
 node_modules
 test/coverage
 test/dist
+.DS_Store
