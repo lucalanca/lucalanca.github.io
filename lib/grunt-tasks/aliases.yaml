@@ -28,12 +28,12 @@ html-prod:
   - htmlmin
 
 css-dev:
-  - grunticon:dev
+  # - grunticon:dev
   - compass
   - autoprefixer
 
 css-prod:
-  - grunticon:prod
+  # - grunticon:prod
   - compass
   - autoprefixer
   - uncss
