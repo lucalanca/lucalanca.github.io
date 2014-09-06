@@ -1,6 +1,6 @@
 doctype html5
 
-html.no-js(lang='en')
+html.no-js(lang='en-US')
 
   head
     meta(charset='utf-8')
@@ -26,14 +26,26 @@ html.no-js(lang='en')
           baseUrl: '#{relativePath}/js/',
           paths: {
             jquery: '#{relativePath}bower_components/jquery/dist/jquery',
-            mediaQuery: '#{relativePath}bower_components/sensible/mediaQuery'
-            /* add compoenents as this
-            mycomponent: '#{relativePath}components/mycomponent/mycomponent'
-            */
+            mediaQuery: '#{relativePath}bower_components/sensible/mediaQuery',
+            project: '#{relativePath}components/project/project',
+            waypoints: '#{relativePath}bower_components/jquery-waypoints/waypoints.min',
           },
-          shim: {}
+          shim: {
+            waypoints: ['jquery']
+          }
         });
-
+        WebFontConfig = {
+          google: { families: [ 'Source+Sans+Pro:300,700,300italic,700italic:latin' ] }
+        };
+        (function() {
+          var wf = document.createElement('script');
+          wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+          wf.type = 'text/javascript';
+          wf.async = 'true';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(wf, s);
+        })()
 
 
       //

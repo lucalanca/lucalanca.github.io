@@ -8,11 +8,11 @@
       This is how you should require a component:
       make sure `mycomponent` in the require-config situated in layout/layout.jade
      */
-    /*
-      require(['mycomponent'], function () {
+
+      require(['project'], function () {
           console.log('mycomponent is loaded');
       });
-    */
+
 
 })();
 

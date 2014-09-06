@@ -3,11 +3,16 @@
     "sensible/grid";
 
 @include sensibleGrid (
-    $modern: false,
-    $gutter: 20px,
+    $modern: true,
+    $gutter: $s-gutter,
     $base-font-size: 16px,
     $slug: "l-",
     $pushClasses: false,
+    $gutterModifiers: (
+        "no-gap"            : 0,
+        "double"            : 2 * $s-gutter,
+        "triple"            : 3 * $s-gutter
+    ),
     $gridWidths: (
         "one-whole"         : 100%,
         "one-half"          : 50%,

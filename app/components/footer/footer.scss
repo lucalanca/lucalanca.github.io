@@ -1,0 +1,42 @@
+$color-text: darken(#7f8c8d, 20%);
+
+.footer {
+  padding: 3 * $s-gutter 0;
+  background: lighten(#bdc3c7, 15%);
+  color: $color-text;
+}
+
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-title {
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 0 0 1rem;
+}
+
+.footer-list {
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: .8rem;
+    color: $color-text;
+    &:hover { color: darken($color-text, 40%); }
+  }
+  span {
+    margin-left: $s-gutter / 4;
+  }
+}
+
+.footer-icon {
+  width: 1.3rem;
+  path {
+    fill: $color-text;
+  }
+}

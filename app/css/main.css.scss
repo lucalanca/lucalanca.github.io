@@ -2,7 +2,9 @@
     "compass",
     "0.settings",
     "bonescss/mixins",
-    "sensible/mediaqueries";
+    "bonescss/vendor/normalize",
+    "sensible/mediaqueries",
+    "animate.css-scss/animate.scss";
 
 @import
     "1.base",
