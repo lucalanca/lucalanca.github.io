@@ -5,13 +5,8 @@
 *.sass-cache
 *.sublime-*
 
-components
-css
-dist
-=======
 dist/
 /lib/bower_components
->>>>>>> f24fcac599d6688a370f0356ae186983f366bf81
 node_modules
 .sass-cache
 .DS_Store
