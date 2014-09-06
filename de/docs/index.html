@@ -1,0 +1,180 @@
+<!DOCTYPE html5>
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <title>Skeleton Documentation</title>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" href="../..//css/main.css"/>
+  </head>
+  <body>
+    <div class="l-site-width">
+          <div class="docs-skeleton"><p><img id="logo" align="right" height="90" style="margin: 0 0 20px 20px" src="http://imgh.us/skeleton.svg"></p>
+<h1 id="skeleton">Skeleton</h1>
+<h2 id="what-is-skeleton">What is skeleton</h2>
+<p>Skeleton is a static site generator that can serve as a boilerplate for different frontend projects. It includes:</p>
+<ul>
+<li>defines a folder structure to develop a web app</li>
+<li>defines a way to write reusable web components (HTML / CSS / JS)</li>
+<li>includes a grunt task to compile jade and translated data files</li>
+<li>makes use of some custom CSS &amp; JS we often reuse on projects</li>
+</ul>
+<h2 id="future-plans-">Future plans:</h2>
+<ul>
+<li>generates a style guide for the defaults styles and documenting the components</li>
+</ul>
+<h2 id="guides">Guides</h2>
+<ul>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#templates">Jade templates, Data and translation</a></li>
+<li><a href="#reusable-components">Reusable Components</a></li>
+<li><a href="#toolset">JS / CSS Toolset</a></li>
+<li><a href="#styleguide">Styleguide</a></li>
+<li><a href="#folder-structure">Folder Structure</a></li>
+</ul>
+<h2 id="-a-id-getting-started-getting-started-a-"><a id="getting-started">Getting started</a></h2>
+<h3 id="setting-up-a-new-project">Setting up a new project</h3>
+<p>To start a new project, create a new repository on git and add the skeleton repository as remote:</p>
+<pre><code>git remote add skeleton https://github.com/ginetta/skeleton.git 
+</code></pre><p>Fetch the data from skeleton:</p>
+<pre><code>git pull skeleton/master
+</code></pre><p>That&#39;s it, you should have the boilerplate in your project.
+Find and replace &quot;skeleton-project&quot; by your &quot;project-name&quot; in the whole project (CMD + SHIFT + F on Sublime Text). You can now check in all those files in your repo and push them to your git:</p>
+<pre><code>git commit -a
+git push origin/master
+</code></pre><h3 id="using-the-skeleton">Using the skeleton</h3>
+<h4 id="prerequisites">Prerequisites</h4>
+<p>You will need </p>
+<ul>
+<li><a href="http://nodejs.org/">node.js</a> to run the skeleton.</li>
+<li><a href="https://www.ruby-lang.org/en/">Ruby</a> to compile the css and <a href="http://bundler.io/">bundler</a> to install GEM dependencies</li>
+<li><a href="https://github.com/gruntjs/grunt-cli">grunt-cli</a> to run the grunt commands</li>
+</ul>
+<h4 id="installation">Installation</h4>
+<p>Make sure you use the latest gems:</p>
+<pre><code>(sudo) gem update --system
+</code></pre><p>Install and run bundler:</p>
+<pre><code>gem install bundler &amp;&amp; bundle install
+</code></pre><p>Install all the project dependencies:</p>
+<pre><code>npm install
+</code></pre><h3 id="generate-the-app">Generate the app</h3>
+<p>To build the project, just run</p>
+<pre><code>grunt
+</code></pre><p>It will generate all the files, start a server and open your browser with the project index</p>
+<h2 id="-a-id-templates-jade-templates-data-and-translation-a-"><a id="templates">Jade templates, Data and translation</a></h2>
+<h3 id="jade">Jade</h3>
+<p>We choose jade because it always renders valid HTML and it makes it easy to work in a modular way. 
+It brings some key features (e.g. mixins and blocks) that promotes code reuse and maintainability.</p>
+<h3 id="data-translations">Data &amp; Translations</h3>
+<p>Optionally you can store data (even languages specific data) in a JSON file. This file is located under app/data/<language>.js. The data stored in this file will be available in all jade files under the data variable. If you have more that one language file will generate each page per data file.
+For instance, if you have a en.json and de.json container the language specific data for both english and german, skeleton will generate two html files for each page, each with their own specific language data.</p>
+<h2 id="-a-id-reusable-components-reusable-components-a-"><a id="reusable-components">Reusable Components</a></h2>
+<h3 id="concept">Concept</h3>
+<p>In order to write maintainable, generic and reusable code we like to write our code in components. Where a component consits of one of each: </p>
+<ul>
+<li>jade file that contains the markup</li>
+<li>SCSS containes the specifc styles</li>
+<li>JS file as requirejs module</li>
+<li>JSON file to store metadata </li>
+</ul>
+<p>Every component can have sub-components.</p>
+<p>It is up to you, how granular you want your components to be, but keep in mind that skeleton will be able to automaitically build a styleguide out of the component collection. </p>
+<h3 id="how-to-create-a-new-component">How to create a new component</h3>
+<pre><code>grunt addComponent --name=foo
+</code></pre><p>creates a new component called foo</p>
+<pre><code>grunt addComponent --name=bar --parent=foo
+</code></pre><p>creates a new component named bar that is a sub component of foo</p>
+<h2 id="-a-id-toolset-js-scss-css-toolset-a-"><a id="toolset">JS / SCSS / CSS Toolset</a></h2>
+<p>All frontend dependancys are managed truth bower and are optional. We have decided to include a few by default, because we use them all the time. Feel free to remove them for your own app</p>
+<ul>
+<li><a href="http://html5boilerplate.com/">H5BP</a> layout.jade and the CSS base structure is from HTML5 Boilerplate</li>
+<li><a href="http://compass-style.org/">compass</a> We use compass with all its nice little helpers</li>
+<li><a href="https://github.com/meodai/bonescss">bonescss</a> Includes lots of helpers classes from H5BP and useful mixins</li>
+<li><a href="https://github.com/meodai/sensible">sensible</a> Handles responsiveness and provides a very simple grid</li>
+<li><a href="http://requirejs.org/">require.js</a> Is used to require the JS components, also encourages a modular way of writing your code</li>
+<li><a href="http://jquery.org/">jquery</a> jQuery, you know</li>
+</ul>
+<h2 id="-a-id-folder-structure-structure-a-"><a id="folder-structure">Structure</a></h2>
+<pre><code>.
+├── Gemfile                     List of used ruby gems (used for bundle)
+├── Gruntfile.js              Grunt base file
+├── app                         App specific files
+│   ├── assets                  Images, video
+│   ├── components    
+│   │   ├── components.jade   Includes all the components jade mixins check &quot;Reusable Components&quot; for more information
+│   │   ├── components.scss   Includes all the components SCSS/SASS files
+│   │   ├── docs-skeleton     Documentation also used as example
+│   │   └── mycomponent         Example component
+│   │       ├── ...           Component files
+│   │       └── package.json  component meta information
+│   ├── css                   App specific CSS
+│   ├── data                    Data that will be available in JADE
+│   │   ├── en.json           Data can be language specific
+│   │   └── ...
+│   ├── js            
+│   │   ├── globals.js         Used to store globals if needed
+│   │   └── main.js            JS gets initialized here
+│   ├── layout                Layouts that can be extended in JADE pages
+│   ├── meta                    Favicons, humans.txt etc..
+│   └── pages                    Contains Pages/View of your app
+│       ├── docs                Documentation, can be removed
+│       └── index.jade          Used as a starting point
+│
+├── bower.json                  Bower packages are registered here
+│
+├── lib                         Library used for the build
+│   ├── grunt-tasks           Grunt tasks add your here
+│   │   ├── aliases.yaml      Named tasks
+│   │   └── ...
+│   └── toolset                 Skeleton specific tasks
+│
+├── dist                      Builded app (HTML,CSS,JS etc..) 
+</code></pre><h2 id="-a-id-styleguide-style-guide-a-"><a id="styleguide">Style-guide</a></h2>
+<p>Some time in the future a style-guide will be automatically generated with all the components</p>
+
+          </div>
+    </div>
+    <script src="../..//bower_components/requirejs/require.js"></script>
+    <script src="../..//js/main.js"></script>
+    <script>
+      requirejs.config({
+        baseUrl: '../..//js/',
+        paths: {
+          jquery: '../../bower_components/jquery/dist/jquery',
+          mediaQuery: '../../bower_components/sensible/mediaQuery',
+          project: '../../components/project/project',
+          waypoints: '../../bower_components/jquery-waypoints/waypoints.min',
+        },
+        shim: {
+          waypoints: ['jquery']
+        }
+      });
+      WebFontConfig = {
+        google: { families: [ 'Source+Sans+Pro:300,700,300italic,700italic:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })()
+      
+      
+    </script>
+    <!--
+    Google Analytics: change UA-XXXXX-X to be your sites ID.
+    script.
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    -->
+  </body>
+</html>
