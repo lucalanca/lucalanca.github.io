@@ -1,0 +1,25 @@
+$lightgreycolor: #bdc3c7;
+$highlightcolor: #2c3e50;
+
+header {
+  background: rgba(white, 0.3);
+  border-top: 4px solid $highlightcolor;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+nav li {
+  padding: ($s-gutter * 0.5) $s-gutter;
+}
+
+nav a {
+  font-weight: 300;
+  font-size: 1rem;
+  text-decoration: none;
+  color: $highlightcolor;
+  &.active,
+  &:hover {
+    border-bottom: 1px solid $highlightcolor;
+  }
+}

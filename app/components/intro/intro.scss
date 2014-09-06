@@ -1,0 +1,33 @@
+.intro {
+  color: #2c3e50;
+  background: #ecf0f1;
+}
+
+.intro-content-container {
+  position: relative;
+  height: 60%;
+  min-height: 500px;
+}
+
+.intro-content {
+  top: 40%;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.intro-lead,
+.intro-sublead {
+  margin: 0 0 0.54rem;
+}
+
+.intro-lead {
+  font-size: 2.5rem;
+  font-weight: 700;
+  @include fadeInLeft($duration: 2*$durationDefault);
+}
+
+.intro-sublead {
+  font-size: 1.75rem;
+  font-weight: 300;
+  @include fadeInLeft($duration: 2*$durationDefault, $delay: $durationDefault + 300ms);
+}

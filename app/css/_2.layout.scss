@@ -1,0 +1,29 @@
+@import
+    "bonescss/2.layout",
+    "sensible/grid";
+
+@include sensibleGrid (
+    $modern: true,
+    $gutter: $s-gutter,
+    $base-font-size: 16px,
+    $slug: "l-",
+    $pushClasses: false,
+    $gutterModifiers: (
+        "no-gap"            : 0,
+        "double"            : 2 * $s-gutter,
+        "triple"            : 3 * $s-gutter
+    ),
+    $gridWidths: (
+        "one-whole"         : 100%,
+        "one-half"          : 50%,
+        "one-quarter"       : 25%,
+        "three-quarters"    : 75%,
+        "one-third"         : 33.333%,
+        "two-thirds"        : 66.666%,
+        "one-fifth"         : 20%,
+        "four-fifths"       : 80%,
+        "one-sixth"         : 16.666%,
+        "five-sixths"       : 83.333%
+    ),
+    $gridBreakpoints: "not-tablet" "tablet" "tablet-portrait" "not-mobile" "mobile" "mobile-portrait" "print"
+);

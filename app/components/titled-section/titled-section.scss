@@ -1,0 +1,36 @@
+.section {
+  overflow: hidden;
+  padding: 6 * $s-gutter 0;
+}
+
+.section--dark {
+  background: #2c3e50;
+  color: white;
+}
+
+.section--light {
+  background: white;
+  color: #2c3e50;
+}
+
+.section-title, .section-subtitle {
+  margin: 0 0 0.54rem;
+}
+
+$section-alignments: left center right;
+
+@each $alignment in $section-alignments {
+  .section--#{$alignment} {
+    text-align: $alignment;
+  }
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  font-size: 1.4rem;
+  font-weight: 300;
+}
