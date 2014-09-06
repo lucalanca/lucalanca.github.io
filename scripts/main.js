@@ -1,1 +1,0 @@
-"use strict";$(function(){$(".gallery-container").photosetGrid({gutter:"5px",highresLinks:!0,onComplete:function(e){$(e).removeClass("loading")}})});
