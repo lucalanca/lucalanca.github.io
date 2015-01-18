@@ -1,0 +1,45 @@
+{
+  "name": "sensible",
+  "main": [
+    "mediaQuery.js",
+    "_mediaqueries.scss"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/meodai/sensible.git"
+  },
+  "keywords": [
+    "grids",
+    "layout",
+    "grid",
+    "system",
+    "skeleton",
+    "SMACSS"
+  ],
+  "ignore": [
+    "source",
+    "spec",
+    ".bowerrc",
+    ".gitignore",
+    ".jshintignore",
+    ".jshintrc",
+    "bower.json",
+    "gruntfile.js",
+    "package.json",
+    "README.md"
+  ],
+  "dependencies": {
+    "jquery": ">=1.10.2"
+  },
+  "homepage": "https://github.com/meodai/sensible",
+  "version": "0.4.8",
+  "_release": "0.4.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.4.8",
+    "commit": "496011cd9e3e56ddf11775632e0101f0869060ae"
+  },
+  "_source": "git://github.com/meodai/sensible.git",
+  "_target": "~0.4.2",
+  "_originalSource": "sensible"
+}

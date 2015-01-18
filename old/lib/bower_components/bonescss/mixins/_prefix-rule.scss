@@ -1,0 +1,31 @@
+/**
+ * Prfixes a rulename with your prefered prefix.
+ * Can also be used to create placeholder and normal classes
+ *
+ * prefix-rules( $ruleName,$prefixes )
+ * @type {[string/list]} $ruleName class or/and placeholder name
+ * @type {[list]} $refixes selector slug
+ *
+ * usage:
+ *  @include prefix-rule( "foo", ".l-" ".is-" "%" ) {
+ *      margin: 20px;
+ *  }
+ * generates:
+ *  .l-foo, .is-foo, %foo {
+ *      margin: 20px;
+ *  }
+ *
+ */
+$default-selector-prefixes: "%" "." !default;
+
+@mixin prefix-rule ( $ruleNames, $prefixes: $default-selector-prefixes) {
+    $rules: "";
+    @each $ruleName in $ruleNames {
+        @each $prefix in $prefixes {
+            $rules: unquote($rules + $prefix + $ruleName + ",");
+        }
+    }
+    #{$rules} {
+        @content;
+    }
+}

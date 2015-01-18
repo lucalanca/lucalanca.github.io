@@ -1,0 +1,68 @@
+/**
+ * remove removes element from list returns the others
+ */
+@function remove($key, $list) {
+
+  $newList: ();
+  @each $item in $list {
+    @if $item != $key {
+      $newList: append($newList, $item, "comma");
+    }
+  }
+
+  @return $newList;
+
+}
+/**
+ * mixin responsive-visibility
+ * $visibility-breakpoints {[list]} list of breakpoints you want to interact with
+ * $overwrite {[boolean]} if set true will generate classes that overwrite what ever visibility is active on that element
+ *
+ * exact:
+ * @include responsive-visibility("only-mobile" "only-tablet" "only-desktop", true);
+ *
+ * up:
+ * @include responsive-visibility("mobile" "tablet" "desktop", false);
+ */
+@mixin responsive-visibility (
+  $visibility-breakpoints,
+  $overwrite: false,
+  $displayTypes: "inline" "inline-block"
+){
+  @each $breakpoint-active in $visibility-breakpoints {
+    @include breakpoint($breakpoint-active) {
+      $visibles: "";
+      $invisibles: "";
+
+      $visibles: unquote($visibles + ".is-visible-#{$breakpoint-active},");
+      $invisibles: unquote($invisibles + ".is-hidden-#{$breakpoint-active},");
+
+      @if $overwrite == true {
+        $others: remove($breakpoint-active, $visibility-breakpoints);
+        $othersRule: "";
+        @each $other in $others {
+          $invisibles: unquote($invisibles + ".is-visible-#{$other},");
+        }
+      }
+
+      #{$visibles} {
+        display: block !important;
+        visibility: visible;
+        @each $display in $displayTypes {
+          &--#{$display} {
+            display: #{$display};
+          }
+        }
+      }
+      #{$invisibles} {
+        display: none !important;
+        visibility: hidden;
+        @each $display in $displayTypes {
+          &--#{$display} {
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
+}

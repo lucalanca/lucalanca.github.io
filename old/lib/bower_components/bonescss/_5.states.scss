@@ -1,0 +1,88 @@
+/*
+ * Hide only visually, but have it available for screen readers: h5bp.com/v
+ */
+$state-selectors: "%is-" ".is-" !default;
+$state-selectors-and: "&%is-" "&.is-" !default;
+
+@include prefix-rule( "visuallyhidden", $prefixes: $state-selectors ) {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+
+    /*
+     * Extends the .visuallyhidden class to allow the element to be focusable
+     * when navigated to via the keyboard: h5bp.com/p
+     */
+    @include prefix-rule( "focusable", $prefixes: $state-selectors-and ) {
+        &:active, &:focus {
+            clip: auto;
+            height: auto;
+            margin: 0;
+            overflow: visible;
+            position: static;
+            width: auto;
+        }
+    }
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+@include prefix-rule( "invisible", $prefixes: $state-selectors ) {
+    visibility: hidden;
+}
+
+/*
+ * Generic class to disable buttons and links
+ */
+@include prefix-rule( "disabled", $prefixes: $state-selectors ) {
+    @include opacity(0.5);
+    pointer-events: none;
+}
+
+/*
+ * Hide visually and from screen readers: h5bp.com/u
+ */
+@include prefix-rule( "hidden", $prefixes: $state-selectors ) {
+    display: none !important;
+    visibility: hidden;
+}
+
+/**
+ * Used to show elements
+ * will be set to inherit by default, but can be block inline or inline-block as well,
+ * just use the modifiers
+ */
+@include prefix-rule( "visible", $prefixes: $state-selectors ) {
+    display: inherit !important;
+    visibility: visible;
+    &--block {
+        display: block !important;
+    }
+    &--inline {
+        display: inline !important;
+    }
+    &--inline-block {
+        display: inline-block !important;
+    }
+}
+
+/* generic loading class */
+@include prefix-rule( "loading", $prefixes: $state-selectors ) {
+    pointer-events: none;
+    opacity: 0.5;
+
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%   { opacity: 0.2; }
+  50%  { opacity: 0.6; }
+  100% { opacity: 0.2; }
+}
+

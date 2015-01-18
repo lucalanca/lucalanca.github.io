@@ -1,0 +1,38 @@
+/**
+ * px2percent calculates the relative with based on two values
+ * @param  {[value]} $size
+ * @param  {[value]} $contextSize
+ * @return {[value in %]}
+ */
+@function px2percent ($size,$contextSize: $s-design-width) {
+	@return ( $size / $contextSize) * 100%;
+}
+
+/**
+ * px2rel turns px values in to REM's base on the base font size
+ * @param  {[value]} $px Wished font size
+ * @param  {[value]} $baseSize Reference Size (usualy HTML/Body font size)
+ * @param  {[value]} $unit of the converted value
+ * @return {[value]} Relative value inc. unit
+ */
+@function px2rel($px, $baseSize: $s-font-base, $unit: rem) {
+	@return ( $px / $baseSize ) * 1#{unit};
+}
+
+/**
+ *  font-size REM fallback mixin for legacy browsers
+ *  @param  {[value]} $px wished font-size / only use when needed will bloat up your CSS
+ */
+@mixin font-size($px) {
+	font-size: ($px);
+	font-size: px2rel($px);
+}
+
+/**
+ *  line-height REM fallback mixin for legacy browsers
+ *  @param  {[value]} $px wished line-height
+ */
+@mixin line-height($px) {
+	line-height: ($px);
+	line-height: px2rel($px);
+}

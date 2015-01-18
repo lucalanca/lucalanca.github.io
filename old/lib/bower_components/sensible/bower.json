@@ -1,0 +1,34 @@
+{
+    "name": "sensible",
+    "main": [
+        "mediaQuery.js",
+        "_mediaqueries.scss"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/meodai/sensible.git"
+    },
+    "keywords": [
+        "grids",
+        "layout",
+        "grid",
+        "system",
+        "skeleton",
+        "SMACSS"
+    ],
+    "ignore": [
+        "source",
+        "spec",
+        ".bowerrc",
+        ".gitignore",
+        ".jshintignore",
+        ".jshintrc",
+        "bower.json",
+        "gruntfile.js",
+        "package.json",
+        "README.md"
+    ],
+    "dependencies": {
+        "jquery": ">=1.10.2"
+    }
+}
