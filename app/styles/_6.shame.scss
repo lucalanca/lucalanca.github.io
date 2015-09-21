@@ -1,0 +1,291 @@
+// TYPOGRAPHY
+
+// TYPOGRAPHY RYTHM
+@each $spacing-name, $spacing-value in $spacings {
+  .t-vr-#{$spacing-name} { margin-top: $spacing-value; }
+  @include breakpoint(tablet) {
+    .t-tablet-vr-#{$spacing-name} { margin-top: $spacing-value; }
+  }
+  @include breakpoint(mobile) {
+    .t-mobile-vr-#{$spacing-name} { margin-top: $spacing-value; }
+  }
+}
+
+// h1, h2, h3, h4, h5, h6, p, li { margin: 0;}
+
+// body {
+//   color: map-get($colors, almost-black);
+// }
+
+p {
+  max-width: 32rem;
+  font-weight: 300;
+}
+
+// a {
+//   &, &:visited {
+//     color: inherit;
+//     font-weight: 300;
+//     text-decoration: none;
+//     padding-bottom: 1px;
+//     border-bottom: 3px solid rgba(map-get($colors, almost-black), 0.3);
+//     transition: color 0.25s linear, border-bottom-color 0.25s linear;
+//   }
+//   &:hover {
+//     border-bottom-color: map-get($colors, tryout-blue);
+//     color: map-get($colors, tryout-blue);
+//   }
+// }
+
+// .t-center { text-align: center; }
+
+// .t-lead {
+//   font-size: 2.5rem;
+// }
+
+// .t-sublead {
+//   font-size: 1.5rem;
+//   font-weight: 300;
+// }
+
+// .t-date {
+//   font-size: .8rem;
+//   font-weight: 300;
+// }
+
+.t-headline {
+  $t-headline-size: 1.9rem;
+  color: rgba(#fff, 0.75);
+  font-size: $t-headline-size;
+  line-height: 1.57;
+  font-weight: 300;
+  max-width: $t-headline-size * 25;
+
+  strong {
+    color: #fff;
+    font-weight: 300;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    width: 2 * map-get($spacings, xlarge);
+    height: 2px;
+    background: map-get($colors, tryout-blue);
+    margin-bottom: map-get($spacings, small);
+  }
+}
+
+.inline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    display: inline-block;
+    width: 2*$s-gutter;
+    height: 2*$s-gutter;
+    margin-right: $s-gutter/2;
+  }
+}
+
+.link-reset {
+  text-decoration: none;
+  path {
+    fill: rgba(#fff, 0.7);
+  }
+
+  &:hover path {
+    fill: rgba(#fff, 1);
+  }
+}
+
+// .t-know-more {
+//   font-family: 'Open Sans', sans-serif;
+//   font-weight: 300;
+//   position: absolute;
+//   bottom: 0;
+//   padding-bottom: 2em;
+//   text-align: center;
+//   width: 100%;
+//   font-size: .7rem;
+//   text-transform: uppercase;
+//   &:after {
+//     content: "▾";
+//     font-size: .8rem;
+//     line-height: 1;
+//     position: absolute;
+//     bottom: .6em;
+//     left: 0;
+//     right: 0;
+//   }
+// }
+
+// .t-title {
+//   font-weight: 300;
+//   font-size: 2rem;
+//   // position: relative;
+//   // padding-left: map-get($spacings, small);
+//   // &:before {
+//   //   content: "";
+//   //   display: inline-block;
+//   //   width: 2px;
+//   //   height: 1.8rem;
+//   //   position: absolute;
+//   //   top: 50%;
+//   //   left: 0;
+//   //   transform: translateY(-50%);
+//   //   background: currentColor;
+//   // }
+// }
+
+// .t-body-title {
+//   font-weight: 700;
+//   font-size: 1.1rem;
+// }
+
+// .t-manifesto-title,
+// .t-manifesto-body {
+//   font-family: 'Open Sans', sans-serif;
+//   text-align: center;
+// }
+
+// .t-manifesto-title {
+//   font-size: 1.1rem;
+//   font-weight: 600;
+//   @extend .t-vr-medium;
+// }
+
+// .t-manifesto-body {
+//   font-size: 1rem;
+//   @extend .t-vr-small;
+// }
+
+// .t-heading {
+//   font-family: $headings-font-family;
+//   font-weight: 800;
+// }
+
+// .t-body {
+//   font-family: $base-font-family;
+//   font-weight: 300;
+// }
+
+// h1, h2, h3, h4, h5, h6, p, li {
+//   margin: 0;
+// }
+
+// .lead {
+//   font-size: 1.7rem;
+//   font-weight: 800;
+// }
+
+// .subtitle {
+//   font-size: 1.1rem;
+//   font-weight: 800;
+// }
+
+
+// p {
+//   font-size: 1rem;
+//   font-weight: 300;
+// }
+
+
+// COLORS
+//
+
+// .c-bg-gradient-2 {
+//   background: linear-gradient(90deg, #485563 10%, #29323c 90%);
+// }
+
+// .c-bg-gradient {
+//   background: linear-gradient(0deg, #83a4d4 10%, #b6fbff 90%);
+// }
+
+
+// .c-bg-gradient
+//   background: red;
+
+
+// }
+
+// background: linear-gradient(90deg, #83a4d4 10%, #b6fbff 90%);
+
+@each $color-name, $color-value in $colors {
+  .c-bg-#{$color-name} { background: #{$color-value}; }
+  .t-#{$color-name} { color: #{$color-value}; }
+}
+
+// .c-bg-tryout-blue-dark { background: darken(map-get($colors, tryout-blue), 5%);}
+// .c-bg-tryout-blue-dark {
+//   background-size: cover;
+//   background: url(../images/porto.jpg) no-repeat 100% 100%;
+//   @include breakpoint(tablet) {
+//     background-image: url(../images/porto-medium.jpg);
+//   }
+//   @include breakpoint(mobile) {
+//     background-image: url(../images/porto-small.jpg);
+//   }
+// }
+
+// .c-bg-tryout-blue {
+//   color: map-get($colors, almost-white);
+//   a {
+//     border-bottom-color: map-get($colors, almost-white);
+//     &:hover {
+//       border-bottom-color: map-get($colors, almost-black);
+//       color: map-get($colors, almost-black);
+//     }
+//   }
+// }
+
+
+
+
+
+
+
+// SPACINGS
+
+@each $spacing-name, $spacing-value in $spacings {
+  .l-spacing-#{$spacing-name}   {
+    padding: #{$spacing-value};
+  }
+
+  .l-spacing-#{$spacing-name}-h {
+    padding-left: #{$spacing-value};
+    padding-right: #{$spacing-value};
+  }
+
+  .l-spacing-#{$spacing-name}-v {
+    padding-top: #{$spacing-value};
+    padding-bottom: #{$spacing-value};
+  }
+
+  .l-spacing-#{$spacing-name}-l {
+    padding-left: #{$spacing-value};
+  }
+}
+
+
+
+// MEGA SHAME
+// .list--huge-numbers {
+//   margin: 0;
+//   padding: 0;
+//   list-style-type: none;
+
+//   li {
+//     counter-increment: step-counter;
+//     &:before {
+//       content: counter(step-counter) ".";
+//       display: inline;
+//       font-size: 6rem;
+//       color: inherit;
+//       font-weight: 300;
+//       transform: rotate(-5deg);
+//       -webkit-transform: rotate(-5deg);
+//     }
+//   }
+// }
+

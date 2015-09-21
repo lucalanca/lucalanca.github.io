@@ -1,0 +1,22 @@
+// bower:scss
+@import "../../bower_components/normalize-scss/_normalize.scss";
+@import "../../bower_components/sensible/_mediaqueries.scss";
+// endbower
+@import "../../bower_components/sensible/_grid.scss";
+
+// @import "../../bower_components/bonescss/mixins/_prefix-rule";
+// @import "../../bower_components/bonescss/_3.helpers";
+
+@import
+    "0.settings",
+    "1.base",
+    "2.layout",
+    // "3.helpers",
+    // "4.print",
+    // "5.states",
+    "6.shame";
+
+figure {
+  max-width: 60em;
+  margin: 0 auto;
+}
