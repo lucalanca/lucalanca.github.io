@@ -1,0 +1,11 @@
+@import "settings.colors";
+@import "settings.typography";
+
+@import "elements.typography";
+
+body {
+  background: $color-background;
+  max-width: 900px;
+  padding: 0 1rem;
+  margin: 0;
+}
