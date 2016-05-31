@@ -36,11 +36,11 @@ const HTML_WEBPACK_PLUGIN_INSTANCES = PAGES.map((p) => {
 
 var plugins = [
   new ExtractTextPlugin('home-styles', '[name]-[contenthash].css'),
-  new webpack.optimize.CommonsChunkPlugin({
-    name:      'main', // Move dependencies to our main file
-    children:  true, // Look for common dependencies in all children,
-    minChunks: 2, // How many times a dependency must come up before being extracted
-  }),
+  // new webpack.optimize.CommonsChunkPlugin({
+  //   name:      'main', // Move dependencies to our main file
+  //   children:  true, // Look for common dependencies in all children,
+  //   minChunks: 2, // How many times a dependency must come up before being extracted
+  // }),
 ];
 
 plugins = plugins.concat(HTML_WEBPACK_PLUGIN_INSTANCES);
