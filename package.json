@@ -10,6 +10,7 @@
     "build:prod": "NODE_ENV=production webpack",
     "serve": "webpack-dev-server --inline --hot --open",
     "serve:prod": "NODE_ENV=production webpack-dev-server --open --inline --hot",
+    "deploy": "npm run build && gh-pages -b master -d .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
