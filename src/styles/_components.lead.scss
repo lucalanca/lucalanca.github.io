@@ -2,16 +2,7 @@
   font-family : $font-family-default;
   font-weight : $font-weight-default;
   font-size   : 2rem;
-  color       : #bbb;
-
-
-
-  &__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-  }
+  color       : $color-gray;
 
   em {
     color: $font-color-default;

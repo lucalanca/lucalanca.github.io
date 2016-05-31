@@ -1,0 +1,17 @@
+.o-center {
+  display: flex;
+  flex-direction: column;
+
+  &--v {
+    justify-content: center;
+  }
+
+  &--h {
+    align-items: center;
+  }
+
+  &--both {
+    justify-content: center;
+    align-items: center;
+  }
+}
