@@ -13,9 +13,15 @@ html(lang="en")
     | !{require('../pages/' + htmlWebpackPlugin.options.environment.partial + '.jade' )(htmlWebpackPlugin.options.environment)}
     
     include ../partials/footer.jade
+    - var fontFamilies = []
+    if htmlWebpackPlugin.options.environment.partial === 'index'
+      - fontFamilies = ['Roboto+Mono:300']
+    else
+      - fontFamilies = ['Roboto+Mono:300,300italic,500,500italic', 'Roboto+Mono:300, Open+Sans:300,800' ]
+      
     script.
       WebFontConfig = {
-        google: { families: [ 'Roboto+Mono:300,300italic,500,500italic', 'Open+Sans:300,800' ] }
+        google: { families: !{JSON.stringify(fontFamilies)} }
       };
       (function(d) {
         var wf = d.createElement('script'), s = d.scripts[0];
