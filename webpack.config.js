@@ -5,6 +5,7 @@ const CONFIG = {
 
 const webpack = require('webpack');
 const production = process.env.NODE_ENV === 'production';
+const HTML_MINIFIER_OPTIONS = require('./html-minifier.config');
 
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -22,13 +23,13 @@ var plugins = [
     title: 'João Figueiredo',
     environment: { partial: 'pages/index' },
     template: `./${CONFIG.SRC_FOLDER}/templates/template.ejs`,
-    // minify: production ? HTML_MINIFIER_OPTIONS : false,
+    minify: production ? HTML_MINIFIER_OPTIONS : false,
   }),
   new HtmlWebpackPlugin({
     filename: 'styleguide.html',
     environment: { partial: 'pages/styleguide' },
     template: `./${CONFIG.SRC_FOLDER}/templates/template.ejs`,
-    // minify: production ? HTML_MINIFIER_OPTIONS : false,
+    minify: production ? HTML_MINIFIER_OPTIONS : false,
   }),
 ];
 
