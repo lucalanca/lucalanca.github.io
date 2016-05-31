@@ -21,13 +21,19 @@ var plugins = [
   new HtmlWebpackPlugin({
     filename: 'index.html',
     title: 'João Figueiredo',
-    environment: { partial: 'pages/index' },
+    environment: {
+      partial: 'index',
+      production
+    },
     template: `./${CONFIG.SRC_FOLDER}/templates/template.jade`,
     minify: production ? HTML_MINIFIER_OPTIONS : false,
   }),
   new HtmlWebpackPlugin({
     filename: 'styleguide.html',
-    environment: { partial: 'pages/styleguide' },
+    environment: {
+      partial: 'styleguide',
+      production
+    },
     template: `./${CONFIG.SRC_FOLDER}/templates/template.jade`,
     minify: production ? HTML_MINIFIER_OPTIONS : false,
   }),

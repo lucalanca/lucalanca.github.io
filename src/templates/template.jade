@@ -5,5 +5,9 @@ html(lang="en")
     meta(http-equiv="x-ua-compatible",content="ie=edge")
     meta(name="viewport",content="width=device-width, initial-scale=1")
     title= htmlWebpackPlugin.options.title
-  body !{require('../' + htmlWebpackPlugin.options.environment.partial + '.jade' )(htmlWebpackPlugin.options.environment)}
+  body.o-layout
+    - var data = htmlWebpackPlugin.options.environment
+    | !{require('../pages/' + htmlWebpackPlugin.options.environment.partial + '.jade' )(htmlWebpackPlugin.options.environment)}
+    include ../partials/footer.jade
+    
     
