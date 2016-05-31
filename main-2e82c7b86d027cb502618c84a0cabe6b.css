@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:300,300italic,500,500italic);@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,800);/**
+/**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
  * @author Lea Verou
@@ -115,7 +115,7 @@ pre[class*="language-"] {
   cursor: help; }
 @charset "UTF-8";
 html {
-  font-family: "Roboto Mono", Menlo, Courier New, Courier, monospace;
+  font-family: Menlo, Courier New, Courier, monospace;
   font-weight: 300;
   font-size: 1em;
   line-height: 1.7;
@@ -124,6 +124,8 @@ html {
   word-break: break-word;
   hyphens: auto;
   -webkit-hyphens: auto; }
+  html.wf-robotomono-n3-active, html.wf-robotomono-i3-active, html.wf-robotomono-n5-active, html.wf-robotomono-i5-active {
+    font-family: "Roboto Mono"; }
 
 strong {
   font-weight: bold; }
@@ -249,7 +251,7 @@ body {
     outline: none; }
 
 .c-lead {
-  font-family: "Roboto Mono", Menlo, Courier New, Courier, monospace;
+  font-family: "Roboto Mono";
   font-weight: 300;
   font-size: 2rem;
   color: #BBBBBB; }
@@ -284,7 +286,7 @@ body {
 .c-narrative h5,
 .c-narrative h6,
 .c-narrative cite {
-  font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: "Open Sans";
   margin: 1.5em 0 0 0;
   line-height: 1.3; }
 
