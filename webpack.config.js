@@ -22,13 +22,13 @@ var plugins = [
     filename: 'index.html',
     title: 'João Figueiredo',
     environment: { partial: 'pages/index' },
-    template: `./${CONFIG.SRC_FOLDER}/templates/template.ejs`,
+    template: `./${CONFIG.SRC_FOLDER}/templates/template.jade`,
     minify: production ? HTML_MINIFIER_OPTIONS : false,
   }),
   new HtmlWebpackPlugin({
     filename: 'styleguide.html',
     environment: { partial: 'pages/styleguide' },
-    template: `./${CONFIG.SRC_FOLDER}/templates/template.ejs`,
+    template: `./${CONFIG.SRC_FOLDER}/templates/template.jade`,
     minify: production ? HTML_MINIFIER_OPTIONS : false,
   }),
 ];
@@ -82,7 +82,8 @@ module.exports = {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
       { test: [/\.css$/, /\.scss$/], loader: ExtractTextPlugin.extract('style', 'css!sass') },
-      { test: /\.html$/, loader: 'html' }
+      { test: /\.html$/, loader: 'html' },
+      { test: /\.jade$/, loader: 'jade' },
     ]
   },
   plugins: plugins
