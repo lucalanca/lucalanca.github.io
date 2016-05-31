@@ -27,6 +27,7 @@ const HTML_WEBPACK_PLUGIN_INSTANCES = PAGES.map((p) => {
       },
       template: `./${CONFIG.SRC_FOLDER}/templates/template.jade`,
       minify: production ? HTML_MINIFIER_OPTIONS : false,
+      excludeChunks: p === 'index' ?  ['styleguide-styles', 'styleguide-scripts'] : ['home-styles'],
     }
   );
 })
@@ -34,7 +35,7 @@ const HTML_WEBPACK_PLUGIN_INSTANCES = PAGES.map((p) => {
 
 
 var plugins = [
-  new ExtractTextPlugin('bundle.css', '[name]-[contenthash].css'),
+  new ExtractTextPlugin('home-styles', '[name]-[contenthash].css'),
   new webpack.optimize.CommonsChunkPlugin({
     name:      'main', // Move dependencies to our main file
     children:  true, // Look for common dependencies in all children,
@@ -74,28 +75,30 @@ if (production) {
       },
     }),
 
-    new OfflinePlugin({
-      // All options are optional
-      caches: 'all',
-      updateStrategy: 'all',
-      version: 'v1',
-
-      ServiceWorker: {
-        output: 'sw.js'
-      },
-
-      AppCache: false
-    }),
+    // new OfflinePlugin({
+    //   // All options are optional
+    //   caches: 'all',
+    //   updateStrategy: 'all',
+    //   version: 'v1',
+    //
+    //   ServiceWorker: {
+    //     output: 'sw.js'
+    //   },
+    //
+    //   AppCache: false
+    // }),
   ]);
 }
 
-console.log('plugins', plugins);
-
 module.exports = {
-  entry: `./${CONFIG.SRC_FOLDER}/scripts/index.js`,
+  entry: {
+    'index': `./${CONFIG.SRC_FOLDER}/scripts/index.js`,
+    'styleguide-styles': `./${CONFIG.SRC_FOLDER}/styles/styleguide.scss`,
+    'styleguide-scripts': `./${CONFIG.SRC_FOLDER}/scripts/styleguide.js`,
+  },
   output: {
     path:          CONFIG.PATH_DIST,
-    filename:      production ? '[name]-[hash].js' : 'bundle.js',
+    filename:      production ? '[name]-[hash].js' : '[name].js',
   },
   devServer: {
     open: true,

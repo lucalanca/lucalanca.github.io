@@ -1,0 +1,16 @@
+
+body, .styleguide__wrapper, .styleguide {
+  max-height: 100vh;
+  overflow: hidden;
+}
+.styleguide {
+  display: flex;
+  height: 100%;
+}
+.styleguide__sidebar {
+  width: 200px;
+}
+.styleguide__content {
+  flex: 1;
+  overflow-y: scroll;
+}
