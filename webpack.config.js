@@ -21,13 +21,13 @@ var plugins = [
     filename: 'index.html',
     title: 'João Figueiredo',
     environment: { partial: 'pages/index' },
-    template: `./${SRC_FOLDER}/templates/template.ejs`,
+    template: `./${CONFIG.SRC_FOLDER}/templates/template.ejs`,
     // minify: production ? HTML_MINIFIER_OPTIONS : false,
   }),
   new HtmlWebpackPlugin({
     filename: 'styleguide.html',
     environment: { partial: 'pages/styleguide' },
-    template: `./${SRC_FOLDER}/templates/template.ejs`,
+    template: `./${CONFIG.SRC_FOLDER}/templates/template.ejs`,
     // minify: production ? HTML_MINIFIER_OPTIONS : false,
   }),
 ];
@@ -63,7 +63,7 @@ if (production) {
 }
 
 module.exports = {
-  entry: `./${SRC_FOLDER}/scripts/index.js`,
+  entry: `./${CONFIG.SRC_FOLDER}/scripts/index.js`,
   output: {
     path:          CONFIG.PATH_DIST,
     filename:      production ? '[name]-[hash].js' : 'bundle.js'
