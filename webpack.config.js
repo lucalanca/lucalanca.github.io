@@ -1,12 +1,14 @@
 const webpack = require('webpack');
 const production = process.env.NODE_ENV === 'production';
+// const production = true;;
 
 
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
+const HTML_MINIFIER_OPTIONS = require('./html-minifier.config.js');
+console.log('HTML_MINIFIER_OPTIONS', HTML_MINIFIER_OPTIONS);
 
 var plugins = [
   new ExtractTextPlugin('bundle.css', '[name]-[contenthash].css'),
@@ -20,19 +22,23 @@ var plugins = [
     title: 'João Figueiredo',
     environment: { partial: 'pages/index' },
     template: './src/templates/template.ejs',
+    // minify: production ? HTML_MINIFIER_OPTIONS : false,
   }),
   new HtmlWebpackPlugin({
     filename: 'styleguide.html',
     environment: { partial: 'pages/styleguide' },
     template: './src/templates/template.ejs',
+    // minify: production ? HTML_MINIFIER_OPTIONS : false,
   }),
 ];
+
+console.log('production?', production);
 
 if (production) {
   plugins = plugins.concat([
     // Cleanup the builds/ folder before
     // compiling our final assets
-    new CleanPlugin('builds'),
+    // new CleanPlugin('builds'),
 
     // This plugin looks for similar chunks and files
     // and merges them for better caching by the user
@@ -55,18 +61,6 @@ if (production) {
         warnings: false, // Suppress uglification warnings
       },
     }),
-
-    // This plugins defines various variables that we can set to false
-    // in production to avoid code related to them from being compiled
-    // in our final bundle
-    new webpack.DefinePlugin({
-      __SERVER__:      !production,
-      __DEVELOPMENT__: !production,
-      __DEVTOOLS__:    !production,
-      'process.env':   {
-        BABEL_ENV: JSON.stringify(process.env.NODE_ENV),
-      },
-    }),
   ]);
 }
 
@@ -74,13 +68,11 @@ module.exports = {
   entry: './src/scripts/index.js',
   output: {
     path:          'builds',
-    filename:      production ? '[name]-[hash].js' : 'bundle.js',
-    chunkFilename: '[name]-[chunkhash].js',
-    publicPath:    'builds/',
+    filename:      production ? '[name]-[hash].js' : 'bundle.js'
   },
   devServer: {
-    hot: true,
-    contentBase: 'builds/'
+    open: true,
+    colors: true
   },
   debug:   !production,
   devtool: production ? false : 'eval',
