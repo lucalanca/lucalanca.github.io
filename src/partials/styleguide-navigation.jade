@@ -1,0 +1,11 @@
+header
+  - var styleguidePages = [];
+  - styleguidePages.push({name: 'home'      , url: 'styleguide'});
+  - styleguidePages.push({name: 'objects'   , url: 'styleguide-objects'});
+  - styleguidePages.push({name: 'components', url: 'styleguide-components'});
+  nav
+    ul.o-list--unstyled
+      each page in styleguidePages
+        li
+          a.c-link(href="/#{page.url}#{production ? '' : '.html'}")= page.name
+      

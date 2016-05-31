@@ -8,7 +8,7 @@ html(lang="en")
   body.o-layout
     
     | !{require('../pages/' + htmlWebpackPlugin.options.environment.partial + '.jade' )(htmlWebpackPlugin.options.environment)}
-    include ../partials/footer.jade
+    
     script.
       WebFontConfig = {
         google: { families: [ 'Roboto+Mono:300,300italic,500,500italic', 'Open+Sans:300,800' ] }

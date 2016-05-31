@@ -12,6 +12,27 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
 
+const PAGES = [
+  'index', 'styleguide', 'styleguide-objects', 'styleguide-components'
+];
+
+const HTML_WEBPACK_PLUGIN_INSTANCES = PAGES.map((p) => {
+  return new HtmlWebpackPlugin(
+    {
+      filename: `${p}.html`,
+      title: 'João Figueiredo',
+      environment: {
+        partial: p,
+        production: production
+      },
+      template: `./${CONFIG.SRC_FOLDER}/templates/template.jade`,
+      minify: production ? HTML_MINIFIER_OPTIONS : false,
+    }
+  );
+})
+
+
+
 var plugins = [
   new ExtractTextPlugin('bundle.css', '[name]-[contenthash].css'),
   new webpack.optimize.CommonsChunkPlugin({
@@ -19,26 +40,11 @@ var plugins = [
     children:  true, // Look for common dependencies in all children,
     minChunks: 2, // How many times a dependency must come up before being extracted
   }),
-  new HtmlWebpackPlugin({
-    filename: 'index.html',
-    title: 'João Figueiredo',
-    environment: {
-      partial: 'index',
-      production
-    },
-    template: `./${CONFIG.SRC_FOLDER}/templates/template.jade`,
-    minify: production ? HTML_MINIFIER_OPTIONS : false,
-  }),
-  new HtmlWebpackPlugin({
-    filename: 'styleguide.html',
-    environment: {
-      partial: 'styleguide',
-      production
-    },
-    template: `./${CONFIG.SRC_FOLDER}/templates/template.jade`,
-    minify: production ? HTML_MINIFIER_OPTIONS : false,
-  }),
 ];
+
+plugins = plugins.concat(HTML_WEBPACK_PLUGIN_INSTANCES);
+
+
 
 if (production) {
   plugins = plugins.concat([
@@ -78,19 +84,18 @@ if (production) {
         output: 'sw.js'
       },
 
-      AppCache: {
-        directory: 'appcache/'
-      }
-
+      AppCache: false
     }),
   ]);
 }
+
+console.log('plugins', plugins);
 
 module.exports = {
   entry: `./${CONFIG.SRC_FOLDER}/scripts/index.js`,
   output: {
     path:          CONFIG.PATH_DIST,
-    filename:      production ? '[name]-[hash].js' : 'bundle.js'
+    filename:      production ? '[name]-[hash].js' : 'bundle.js',
   },
   devServer: {
     open: true,

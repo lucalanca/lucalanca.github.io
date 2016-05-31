@@ -1,0 +1,134 @@
+style.
+  body, .styleguide__wrapper, .styleguide {
+    max-height: 100vh;
+    overflow: hidden;
+  }
+  .styleguide {
+    display: flex;
+    height: 100%;
+  }
+  .styleguide__sidebar {
+    width: 200px;
+  }
+  .styleguide__content {
+    flex: 1;
+    overflow-y: scroll;
+  }
+main.o-layout__content.styleguide__wrapper(role="main")
+  .styleguide
+    .styleguide__sidebar(style="text-align: right;")
+      .o-container
+        | !{require('../partials/styleguide-navigation.jade')()}
+    .styleguide__content
+      .o-container
+        h2 Components
+        h3 c-button
+        table(style='width: 100%; text-align: center;')
+          thead
+            tr
+              td(style='text-align: left;') tag
+              td Normal
+              td Hover
+              td Focus
+              td Active
+          tbody
+            tr
+              td(style='text-align: left;') anchor
+              td
+                a.c-button.c-button--is-hovered(href='javascript:void()') Normal
+              td
+                a.c-button.c-button--is-focused(href='javascript:void()') Focus
+              td
+                a.c-button.c-button--is-active(href='javascript:void()') Active
+              td
+                a.c-button.c-button--is-disabled(href='javascript:void()', tabindex='-1') Disabled
+            tr
+              td(style='text-align: left;') button
+              td
+                button.c-button.c-button--is-hovered(type='button') Normal
+              td
+                button.c-button.c-button--is-focused(type='button') Focus
+              td
+                button.c-button.c-button--is-active(type='button') Active
+              td
+                button.c-button(type='button', disabled='disabled') Disabled
+        h3 c-narrative
+        .c-narrative
+          h1 H1: WELCOME TO FLAVORTOWN
+          p
+            | And also welcome to 
+            strong The Type Nugget Alpha
+            |  - an online typesetting tool that will eventually make all of your online typesetting dreams come true.
+          p
+            | We started building Type Nugget because we wanted to streamline the design-to-development stage of our workflow - we wanted to design knowing exactly what our content would look like in browser, and generate a robust, accessible stylesheet that we could implement with zero fiddling. And if we can empower others to 
+            em swiftly create some hella fine web type painlessly via a pleasant user interface
+            |  well then hot damn.
+          h2 H2: Full responsiveness, right out of the fryer
+          p
+            | Future builds will definitely include support for multiple breakpoints, with default styles for mobile, tablet, and desktop and the ability to fully customise styles for each breakpoint.
+          p
+            | We’ve also been experimenting with the best ways we can implement typographic scales, and vertical rhythm, and fluid units - so keep an eye out for these in future builds
+          h3 H3: A whole lot more fonts
+          p
+            | Right now, the Alpha is using Typewolf’s 30 Best Google Fonts but we eventually want to integrate the full Google Fonts library, and other font providers too. We’re also working on including the ability to fully customise your font stacks.
+          h4 H4: More Dev and UI options and finer controls
+          p
+            | The Alpha currently generates minified CSS, but we’ll eventually have options for SASS and LESS generation. From a UI standpoint, we’ll keep adding more properties, and include more elements, like drop caps and pull quotes.
+          h5 H5: WHAT DO YOU WANT FROM TYPE NUGGET?
+          p
+            | We know what we want, and that’s to make Type Nugget the most useful tool that we can for you - take our 
+            a(href='#') 2 minute survey
+            | , tell us what’s important to you, and register for a 
+            strong Beta Invite
+            | .
+          h6 H6: Lorem Ipsum Dolor
+          p
+            | At this point, I’m running out of things to say, but still have elements that require placeholder text, so here’s a recipe for 2-Ingredient Banana Pancakes. You’ll need:
+          ul
+            li One medium sized, ripe cavendish banana (or 2 lady finger bananas)
+            li Two large eggs
+            li Quarter of a teaspoon of baking powder
+            li Cinnamon
+          p
+            | Yes, I am aware that that is roughly twice as many ingredients than two, but hear me out.
+          ol
+            li
+              | Mash the banana with a fork until smooth. Some small lumps are good and may even result in fluffier pancakes
+            li
+              | Whisk the eggs until smooth. Add cinnamon and baking powder, and stir through bananas until they achieve a scrambled-banana-egg like consistency
+            li Heat some butter in a pan and spoon in batter. Aim to make small cakes
+            li Flip, serve, and voilà
+          blockquote
+            p
+              | Citations … all include the following: author (or editor, compiler, or translator standing in place of the author), title (and usually subtitle), and date of publication.
+            footer
+              cite
+                a(href='http://www.chicagomanualofstyle.org/') The Chicago Manual of Style
+              | , 15th Edition
+          pre.
+          table
+            thead
+              tr
+                td Description
+                td Date
+                td Amount
+            tbody
+              tr
+                td Rent
+                td
+                  | June 1
+                  sup st
+                  |  2015
+                td 500 €
+              tr
+                td Food
+                td
+                  | June 1
+                  sup st
+                  |  2015
+                td 15 €
+            tfooter
+              tr
+                td Total
+                td
+                td 515 €
