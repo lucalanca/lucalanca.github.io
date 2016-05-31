@@ -1,0 +1,8 @@
+@mixin link--unstyled {
+  text-decoration: none;
+  color: inherit;
+}
+
+.o-link--unstyled {
+  @include link--unstyled;
+}

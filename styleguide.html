@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="builds/bundle.css">
+</head>
+<body>
+  <div class="o-container">
+    <h1>Styleguide</h1>
+    <h2>Objects</h2>
+    <h3>o-layout</h3>
+    <h3>o-container</h3>
+    <h3>o-link--unstyled</h3>
+    <h3>o-button--unstyled</h3>
+    <h3>o-list--inline</h3>
+
+    <h2>Components</h2>
+    <h3>c-button</h3>
+    <table style="width: 100%; text-align: center;">
+      <thead>
+        <tr>
+          <td style="text-align: left;">tag</td>
+          <td>Normal</td>
+          <td>Hover</td>
+          <td>Focus</td>
+          <td>Active</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left;">anchor</td>
+          <td><a href="javascript:void()" class="c-button c-button--is-hovered">Normal</a></td>
+          <td><a href="javascript:void()" class="c-button c-button--is-focused">Focus</a></td>
+          <td><a href="javascript:void()" class="c-button c-button--is-active">Active</a></td>
+          <td><a href="javascript:void()" class="c-button c-button--is-disabled" tabindex="-1">Disabled</a></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">button</td>
+          <td><button type="button" class="c-button c-button--is-hovered">Normal</button></td>
+          <td><button type="button" class="c-button c-button--is-focused">Focus</button></td>
+          <td><button type="button" class="c-button c-button--is-active">Active</button></td>
+          <td><button type="button" class="c-button" disabled="disabled">Disabled</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>c-narrative</h3>
+    <div class="c-narrative">
+      <h1>H1: WELCOME TO FLAVORTOWN</h1>
+
+      <p>And also welcome to <strong>The Type Nugget Alpha</strong> - an online typesetting tool that will eventually make all of your online typesetting dreams come true.</p>
+      <p>We started building Type Nugget because we wanted to streamline the design-to-development stage of our workflow - we wanted to design knowing exactly what our content would look like in browser, and generate a robust, accessible stylesheet that we could implement with zero fiddling. And if we can empower others to <em>swiftly create some hella fine web type painlessly via a pleasant user interface</em> well then hot damn.</p>
+
+
+      <h2>H2: Full responsiveness, right out of the fryer</h2>
+      <p>Future builds will definitely include support for multiple breakpoints, with default styles for mobile, tablet, and desktop and the ability to fully customise styles for each breakpoint.</p>
+      <p>We’ve also been experimenting with the best ways we can implement typographic scales, and vertical rhythm, and fluid units - so keep an eye out for these in future builds</p>
+
+      <h3>H3: A whole lot more fonts</h3>
+      <p>Right now, the Alpha is using Typewolf’s 30 Best Google Fonts but we eventually want to integrate the full Google Fonts library, and other font providers too. We’re also working on including the ability to fully customise your font stacks.</p>
+
+      <h4>H4: More Dev and UI options and finer controls</h4>
+      <p>The Alpha currently generates minified CSS, but we’ll eventually have options for SASS and LESS generation. From a UI standpoint, we’ll keep adding more properties, and include more elements, like drop caps and pull quotes.</p>
+
+      <h5>H5: WHAT DO YOU WANT FROM TYPE NUGGET?</h5>
+      <p>We know what we want, and that’s to make Type Nugget the most useful tool that we can for you - take our <a href="#">2 minute survey</a>, tell us what’s important to you, and register for a <strong>Beta Invite</strong>.</p>
+
+      <h6>H6: Lorem Ipsum Dolor</h6>
+      <p>At this point, I’m running out of things to say, but still have elements that require placeholder text, so here’s a recipe for 2-Ingredient Banana Pancakes. You’ll need:</p>
+
+      <ul>
+        <li>One medium sized, ripe cavendish banana (or 2 lady finger bananas)</li>
+        <li>Two large eggs</li>
+        <li>Quarter of a teaspoon of baking powder</li>
+        <li>Cinnamon</li>
+      </ul>
+
+      <p>Yes, I am aware that that is roughly twice as many ingredients than two, but hear me out.</p>
+
+      <ol>
+        <li>Mash the banana with a fork until smooth. Some small lumps are good and may even result in fluffier pancakes</li>
+        <li>Whisk the eggs until smooth. Add cinnamon and baking powder, and stir through bananas until they achieve a scrambled-banana-egg like consistency</li>
+        <li>Heat some butter in a pan and spoon in batter. Aim to make small cakes</li>
+        <li>Flip, serve, and voilà</li>
+      </ol>
+
+      <blockquote>
+        <p>Citations … all include the following: author (or editor, compiler, or translator standing in place of the author), title (and usually subtitle), and date of publication.</p>
+        <footer><cite><a href="http://www.chicagomanualofstyle.org/">The Chicago Manual of Style</a></cite>, 15th Edition</footer>
+      </blockquote>
+
+      <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/styles/default.css&quot;&gt;
+&lt;script src=&quot;/path/to/highlight.pack.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;</code></pre>
+
+      <table>
+        <thead>
+          <tr>
+            <td>Description</td>
+            <td>Date</td>
+            <td>Amount</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Rent</td>
+            <td>June 1<sup>st</sup> 2015</td>
+            <td>500 €</td>
+          </tr>
+          <tr>
+            <td>Food</td>
+            <td>June 1<sup>st</sup> 2015</td>
+            <td>15 €</td>
+          </tr>
+        </tbody>
+        <tfooter>
+          <tr>
+            <td>Total</td>
+            <td></td>
+            <td>515 €</td>
+          </tr>
+        </tfooter>
+      </table>
+    </div>
+  </div>
+  <script src="builds/bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:300,300italic,500,500italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,800);
+
+body {
+
+}
+
+
+
+html {
+  font-family : $font-family-default;
+  font-weight : $font-weight-default;
+  font-size   : $font-size-default;
+  line-height : $font-line-height-default;
+  color       : $font-color-default;
+
+
+  word-break: break-all;
+  // Non standard for webkit
+  word-break: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+strong {
+  font-weight: $font-weight-monospace-strong;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+  margin: 0;
+}
