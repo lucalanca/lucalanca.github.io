@@ -28,7 +28,7 @@ if (production) {
 
     // This plugins optimizes chunks and modules by
     // how much they are used in your app
-    new webpack.optimize.OccurenceOrderPlugin(),
+    // new webpack.optimize.OccurenceOrderPlugin(),
 
     // This plugin prevents Webpack from creating chunks
     // that would be too small to be worth loading separately
