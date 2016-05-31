@@ -1,18 +1,16 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:300,300italic,500,500italic);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,800);
-
-body {
-
-}
-
-
-
 html {
-  font-family : $font-family-default;
+  font-family : $font-family-default-falback;
   font-weight : $font-weight-default;
   font-size   : $font-size-default;
   line-height : $font-line-height-default;
   color       : $font-color-default;
+
+  &.wf-robotomono-n3-active,
+  &.wf-robotomono-i3-active,
+  &.wf-robotomono-n5-active,
+  &.wf-robotomono-i5-active {
+    font-family : $font-family-default;
+  }
 
 
   word-break: break-all;

@@ -1,5 +1,9 @@
-$font-family-monospace  : 'Roboto Mono', Menlo, Courier New, Courier, monospace;
-$font-family-sans-serif : 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
+$font-family-monospace          : 'Roboto Mono';
+$font-family-monospace-fallback : Menlo, Courier New, Courier, monospace;
+
+$font-family-sans-serif-falback : Helvetica Neue, Helvetica, Arial, sans-serif;
+$font-family-sans-serif         : 'Open Sans';
+
 
 $font-weight-monospace-normal: 300;
 $font-weight-monospace-strong: bold;
@@ -10,6 +14,7 @@ $font-weight-sans-serif-strong: 800;
 
 
 $font-family-default          : $font-family-monospace;
+$font-family-default-falback  : $font-family-monospace-fallback;
 $font-weight-default          : $font-weight-monospace-normal;
 $font-size-default            : 1em;
 $font-line-height-default     : 1.7;
