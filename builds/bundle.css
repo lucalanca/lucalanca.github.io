@@ -240,13 +240,13 @@ body {
   font-family: "Roboto Mono", monospace;
   font-weight: 300;
   font-size: 2rem;
-  color: #161616; }
+  color: #bbb; }
   .c-lead__container {
     display: flex;
     flex-direction: column;
     justify-content: center; }
   .c-lead em {
-    color: #bbb;
+    color: #161616;
     font-style: normal; }
 
 .c-narrative p,

@@ -2,7 +2,7 @@
   font-family : $font-family-default;
   font-weight : $font-weight-default;
   font-size   : 2rem;
-  color       : $font-color-default;
+  color       : #bbb;
 
 
 
@@ -14,7 +14,7 @@
   }
 
   em {
-    color: #bbb;
+    color: $font-color-default;
     font-style: normal;
   }
 }
