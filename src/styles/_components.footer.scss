@@ -2,6 +2,7 @@ $c-footer-separator: "-";
 $c-footer-spacing  : 1rem;
 
 .c-footer {
+  @include list--unstyled;
   @include list--inline;
   text-align: center;
   font-size: 0.875rem;

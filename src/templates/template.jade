@@ -8,6 +8,8 @@ html(lang="en")
     link(rel="dns-prefetch" href="//fonts.googleapis.com")
     link(rel="dns-prefetch" href="//fonts.gstatic.com")
     title= htmlWebpackPlugin.options.title
+    style= require('../styles/index.scss')[0][1]
+      
   body.o-layout
     
     | !{require('../pages/' + htmlWebpackPlugin.options.environment.partial + '.jade' )(htmlWebpackPlugin.options.environment)}
