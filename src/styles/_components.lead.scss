@@ -1,0 +1,20 @@
+.c-lead {
+  font-family : $font-family-default;
+  font-weight : $font-weight-default;
+  font-size   : 2rem;
+  color       : $font-color-default;
+
+
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+
+  em {
+    color: #bbb;
+    font-style: normal;
+  }
+}

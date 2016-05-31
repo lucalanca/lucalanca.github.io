@@ -1,0 +1,22 @@
+.c-link {
+  color: $color-blueberry-dusty;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+
+  transition: color 200ms ease, border-bottom-color 200ms ease;
+
+  &:focus,
+  &:hover,
+  &:active {
+    border-bottom-color: currentColor;
+  }
+
+  &:active {
+    color: darken($color-blueberry-dusty, 15%);
+  }
+
+  // &:visited {
+  //   color: red;
+  //   text-decoration: line-through;
+  // }
+}

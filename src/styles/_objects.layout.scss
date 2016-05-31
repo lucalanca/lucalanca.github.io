@@ -1,0 +1,12 @@
+html,
+body {
+  height: 100%;
+}
+
+.o-layout {
+  display: flex;
+  flex-direction: column;
+  &__content {
+    flex: 1;
+  }
+}
