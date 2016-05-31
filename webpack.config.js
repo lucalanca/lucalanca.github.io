@@ -112,10 +112,13 @@ module.exports = {
     ],
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: [/\.css$/, /\.scss$/], loader: ExtractTextPlugin.extract('style', 'css!sass') },
+      { test: [/\.css$/, /\.scss$/], loader: ExtractTextPlugin.extract('style', 'css!postcss!sass') },
       { test: /\.html$/, loader: 'html' },
       { test: /\.jade$/, loader: 'jade' },
     ]
   },
-  plugins: plugins
+  plugins: plugins,
+  postcss: function () {
+    return [require('autoprefixer')({ browsers: ['last 2 versions'] }), require('cssnano')() ];
+  },
 };
