@@ -8,7 +8,8 @@
     "build": "npm run build:dev",
     "build:dev": "webpack",
     "build:prod": "NODE_ENV=production webpack",
-    "serve": "webpack-dev-server --inline --hot --open",
+    "serve": "npm run serve:dev",
+    "serve:dev": "npm run build:dev && webpack-dev-server --open --inline --hot",
     "serve:prod": "NODE_ENV=production webpack-dev-server --open --inline --hot",
     "deploy": "npm run build && gh-pages -b master -d .",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -29,6 +30,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "gh-pages": "^0.11.0",
     "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.19.0",
     "node-sass": "^3.7.0",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",

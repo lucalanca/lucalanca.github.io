@@ -4,15 +4,27 @@ const production = process.env.NODE_ENV === 'production';
 
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 
 var plugins = [
-  new ExtractTextPlugin('bundle.css'),
+  new ExtractTextPlugin('bundle.css', '[name]-[contenthash].css'),
   new webpack.optimize.CommonsChunkPlugin({
     name:      'main', // Move dependencies to our main file
     children:  true, // Look for common dependencies in all children,
     minChunks: 2, // How many times a dependency must come up before being extracted
+  }),
+  new HtmlWebpackPlugin({
+    filename: 'index.html',
+    title: 'João Figueiredo',
+    environment: { partial: 'pages/index' },
+    template: './src/templates/template.ejs',
+  }),
+  new HtmlWebpackPlugin({
+    filename: 'styleguide.html',
+    environment: { partial: 'pages/styleguide' },
+    template: './src/templates/template.ejs',
   }),
 ];
 
@@ -59,7 +71,7 @@ if (production) {
 }
 
 module.exports = {
-  entry: './src',
+  entry: './src/scripts/index.js',
   output: {
     path:          'builds',
     filename:      production ? '[name]-[hash].js' : 'bundle.js',
@@ -68,6 +80,7 @@ module.exports = {
   },
   devServer: {
     hot: true,
+    contentBase: 'builds/'
   },
   debug:   !production,
   devtool: production ? false : 'eval',
@@ -77,8 +90,8 @@ module.exports = {
     ],
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test:  [/\.css$/, /\.scss$/], loader: ExtractTextPlugin.extract('style', 'css!sass') },
-      { test:   /\.html$/, loader: 'html' }
+      { test: [/\.css$/, /\.scss$/], loader: ExtractTextPlugin.extract('style', 'css!sass') },
+      { test: /\.html$/, loader: 'html' }
     ]
   },
   plugins: plugins

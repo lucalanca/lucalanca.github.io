@@ -9,4 +9,8 @@ body {
   &__content {
     flex: 1;
   }
+
+  &--expand {
+    height: 100%;
+  }
 }
