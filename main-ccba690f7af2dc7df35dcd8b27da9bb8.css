@@ -144,11 +144,10 @@ body {
 
 .o-layout {
   display: flex;
+  min-height: 100vh;
   flex-direction: column; }
   .o-layout__content {
     flex: 1; }
-  .o-layout--expand {
-    height: 100%; }
 
 .o-container {
   max-width: 900px;
