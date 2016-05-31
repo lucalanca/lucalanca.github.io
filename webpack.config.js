@@ -10,6 +10,7 @@ const HTML_MINIFIER_OPTIONS = require('./html-minifier.config');
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const OfflinePlugin = require('offline-plugin');
 
 var plugins = [
   new ExtractTextPlugin('bundle.css', '[name]-[contenthash].css'),
@@ -65,6 +66,22 @@ if (production) {
       compress: {
         warnings: false, // Suppress uglification warnings
       },
+    }),
+
+    new OfflinePlugin({
+      // All options are optional
+      caches: 'all',
+      updateStrategy: 'all',
+      version: 'v1',
+
+      ServiceWorker: {
+        output: 'sw.js'
+      },
+
+      AppCache: {
+        directory: 'appcache/'
+      }
+
     }),
   ]);
 }
