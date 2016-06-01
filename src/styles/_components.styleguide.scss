@@ -1,4 +1,3 @@
-
 body, .styleguide__wrapper, .styleguide {
   max-height: 100vh;
   overflow: hidden;
@@ -9,6 +8,7 @@ body, .styleguide__wrapper, .styleguide {
 }
 .styleguide__sidebar {
   width: 200px;
+  text-align: right;
 }
 .styleguide__content {
   flex: 1;

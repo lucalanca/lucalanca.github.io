@@ -1,0 +1,10 @@
+mixin footer(data, options, env)
+  footer.o-container
+    nav
+      ul.c-footer
+        li.c-footer__item
+          a.c-footer__link.c-link(href="/styleguide#{env.production ? '' : '.html'}") (🔨) Styleguide        
+        li.c-footer__item
+          a.c-footer__link.c-link(href='https://www.twitter.com/lucalanca') (💬) Twitter
+        li.c-footer__item
+          a.c-footer__link.c-link(href='https://www.github.com/lucalanca') (🚀) Github

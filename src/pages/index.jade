@@ -1,3 +1,21 @@
-main.o-layout__content.o-container.o-center.o-center--v(role="main")
-  h1.c-lead <em>João Figueiredo</em> is a <em>frontend engineer</em>.
-  p.c-lead He enjoys building exciting and delightful products for the <em>web and mobile</em>.
+extends ../templates/template.jade
+
+include ../components/footer/template.jade
+
+block body
+  main.o-layout__content.o-container.o-center.o-center--v(role="main")
+    h1.c-lead <em>João Figueiredo</em> is a <em>frontend engineer</em>.
+    p.c-lead He enjoys building exciting and delightful products for the <em>web and mobile</em>.
+  +footer({}, {}, data)
+
+
+block scripts
+  script.
+    WebFontConfig = {
+      google: { families: 'Roboto+Mono:300' }
+    };
+    (function(d) {
+      var wf = d.createElement('script'), s = d.scripts[0];
+      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
+      s.parentNode.insertBefore(wf, s);
+    })(document);

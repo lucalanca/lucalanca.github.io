@@ -1,0 +1,13 @@
+mixin styleguide-navigation(data, options, env)
+  - data = data || {}
+  - data.pages = data.pages || []
+  nav
+    ul.o-list--unstyled
+      each page in data.pages
+        li
+          a.c-link(
+            href="/#{page.url}#{production ? '' : '.html'}",
+            class=page.active ? 'is-active' : false,
+            style=page.active ? 'color: red' : false
+          )= page.name
+      

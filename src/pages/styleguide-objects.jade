@@ -1,29 +1,36 @@
-style.
-  body, .styleguide__wrapper, .styleguide {
-    max-height: 100vh;
-    overflow: hidden;
-  }
-  .styleguide {
-    display: flex;
-    height: 100%;
-  }
-  .styleguide__sidebar {
-    width: 200px;
-  }
-  .styleguide__content {
-    flex: 1;
-    overflow-y: scroll;
-  }
-main.o-layout__content.styleguide__wrapper(role="main")
-  .styleguide
-    .styleguide__sidebar
-      .o-container
-        | !{require('../partials/styleguide-navigation.jade')()}
-    .styleguide__content
-      .o-container
-        h2 Objects
-        h3 o-layout
-        h3 o-container
-        h3 o-link--unstyled
-        h3 o-button--unstyled
-        h3 o-list--inline
+extends ../templates/template.jade
+
+include ../components/styleguide-navigation/template.jade
+
+block head
+  style !{require('../styles/styleguide.scss')[0][1]}
+
+block body
+  main.o-layout__content.styleguide__wrapper(role="main")
+    .styleguide
+      .styleguide__sidebar
+        +styleguide-navigation({
+          pages: [
+            {name: 'home'      , url: 'styleguide'},
+            {name: 'objects'   , url: 'styleguide-objects',   active: true},
+            {name: 'components', url: 'styleguide-components'}
+          ]
+        }, {}, data)
+      .styleguide__content
+        .o-container
+          h2 Objects
+          h3 o-layout
+          h3 o-container
+          h3 o-link--unstyled
+          h3 o-button--unstyled
+          h3 o-list--inline
+block scripts
+  script.
+    WebFontConfig = {
+      google: { families: ['Roboto+Mono:300,300italic,500,500italic', 'Open+Sans:300,800' ] }
+    };
+    (function(d) {
+      var wf = d.createElement('script'), s = d.scripts[0];
+      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
+      s.parentNode.insertBefore(wf, s);
+    })(document);

@@ -1,3 +1,4 @@
+- var data = htmlWebpackPlugin.options.environment
 doctype html
 html(lang="en")
   head
@@ -9,27 +10,12 @@ html(lang="en")
     link(rel="dns-prefetch" href="//fonts.gstatic.com")
     title= htmlWebpackPlugin.options.title
     style !{require('../styles/index.scss')[0][1]}
+    block head
       
   body.o-layout
+    block body
+  
+    block scripts
     
-    | !{require('../pages/' + htmlWebpackPlugin.options.environment.partial + '.jade' )(htmlWebpackPlugin.options.environment)}
-    
-    include ../partials/footer.jade
-    - var fontFamilies = []
-    if htmlWebpackPlugin.options.environment.partial === 'index'
-      - fontFamilies = ['Roboto+Mono:300']
-    else
-      - fontFamilies = ['Roboto+Mono:300,300italic,500,500italic', 'Roboto+Mono:300, Open+Sans:300,800' ]
-      
-    script.
-      WebFontConfig = {
-        google: { families: !{JSON.stringify(fontFamilies)} }
-      };
-      (function(d) {
-        var wf = d.createElement('script'), s = d.scripts[0];
-        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
-        s.parentNode.insertBefore(wf, s);
-      })(document);
-
       
       

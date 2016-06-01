@@ -25,9 +25,9 @@ const HTML_WEBPACK_PLUGIN_INSTANCES = PAGES.map((p) => {
         partial: p,
         production: production
       },
-      template: `./${CONFIG.SRC_FOLDER}/templates/template.jade`,
+      template: `./${CONFIG.SRC_FOLDER}/pages/${p}.jade`,
       minify: production ? HTML_MINIFIER_OPTIONS : false,
-      chunks: p === 'index' ? [] : ['styleguide-styles', 'styleguide-scripts'],
+      chunks: p === 'index' ? [] : ['styleguide', 'styleguide'],
     }
   );
 })
@@ -93,9 +93,7 @@ if (production) {
 module.exports = {
   entry: {
     'index': `./${CONFIG.SRC_FOLDER}/scripts/index.js`,
-    'index-styles': `./${CONFIG.SRC_FOLDER}/styles/index.scss`,
-    'styleguide-styles': `./${CONFIG.SRC_FOLDER}/styles/styleguide.scss`,
-    'styleguide-scripts': `./${CONFIG.SRC_FOLDER}/scripts/styleguide.js`,
+    'styleguide': `./${CONFIG.SRC_FOLDER}/scripts/styleguide.js`,
   },
   output: {
     path:          CONFIG.PATH_DIST,
