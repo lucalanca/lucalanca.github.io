@@ -1,1 +1,21 @@
-h3 .o-list
+h3 
+.styleguide-spec
+  h3#o-list .o-list
+  p
+    | There are several objects for both <code>ol</code>
+    | and <code>ul</code>.
+
+  style.
+      .styleguide-spec [class^="o-list"] > li {
+        background-color: DarkOrchid;
+        text-align: center;
+        color: white;
+      }
+      .styleguide-spec [class^="o-list"] > li:nth-child(even) {
+        background-color: mediumpurple;
+      }
+  +styleguide-example('objects/list/examples/default.example')
+  +styleguide-example('objects/list/examples/unstyled.example')
+  +styleguide-example('objects/list/examples/inline.example')
+  +styleguide-example('objects/list/examples/samewidth.example')
+  +styleguide-example('objects/list/examples/equidistant.example')

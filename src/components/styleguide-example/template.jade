@@ -1,9 +1,9 @@
 mixin styleguide-example(path)
   - var jadeContent = require('raw!../' + path)
   - var htmlContent = require('jade?pretty=true!../' + path)()
+  - var compressedHtml = require('jade?pretty=false!../' + path)()
   .styleguide-example.o-grid
-    .styleguide-example__render
-      | !{htmlContent}
+    .styleguide-example__render!= compressedHtml
     .styleguide-example__code-container.narrative.js-styleguide-code
       code.styleguide-example__code-title jade
       pre

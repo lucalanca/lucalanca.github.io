@@ -1,0 +1,4 @@
+ul.o-list--samewidth
+  li samewidth item 1
+  li samewidth item 2
+  li samewidth item 3

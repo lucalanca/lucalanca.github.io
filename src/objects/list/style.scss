@@ -1,13 +1,23 @@
 @mixin list--inline {
-  > li {
-    display: inline-block;
-  }
+  display: flex;
 }
 
 @mixin list--unstyled {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+@mixin list--samewidth {
+  display: flex;
+  > li {
+    flex: 1;
+  }
+}
+
+@mixin list--equidistant {
+  display: flex;
+  justify-content: space-between;
 }
 
 .o-list {
@@ -17,5 +27,14 @@
   &--inline {
     @include list--unstyled;
     @include list--inline;
+  }
+  &--samewidth {
+    @include list--unstyled;
+    @include list--samewidth;
+  }
+
+  &--equidistant {
+    @include list--unstyled;
+    @include list--equidistant;
   }
 }

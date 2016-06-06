@@ -1,0 +1,23 @@
+.o-grid
+  .o-grid__cell.o-grid__cell--one-whole
+    p one-whole
+  .o-grid__cell.o-grid__cell--one-half
+    p one-half
+  .o-grid__cell.o-grid__cell--one-half
+    p one-half
+  .o-grid__cell.o-grid__cell--one-third
+    p one-third
+  .o-grid__cell.o-grid__cell--two-thirds
+    p two-thirds
+  .o-grid__cell.o-grid__cell--one-quarter
+    p one-quarter
+  .o-grid__cell.o-grid__cell--three-quarters
+    p three-quarters
+  .o-grid__cell.o-grid__cell--one-fifth
+    p one-fifth
+  .o-grid__cell.o-grid__cell--four-fifths
+    p four-fifths
+  .o-grid__cell.o-grid__cell--two-fifths
+    p two-fifths
+  .o-grid__cell.o-grid__cell--three-fifths
+    p three-fifths

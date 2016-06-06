@@ -1,0 +1,22 @@
+.styleguide-spec
+  h3#o-grid .o-grid
+  p
+    | Grids are based on <a href="github.com/meodai/sensible">sensible</a>
+    | grids. To use the grid, just wrap your code in a 
+    | <code>.o-grid</code> object. It expects <code>.o-grid__item</code>
+    | children.
+  p
+    | Columns can be achieved using relative units by adding
+    | <em>width<em> modifiers to <code>.o-grid__item</code>
+    | such <code>.u-one-whole</code>,<code>.o-one-half</code>,
+    | <code>.o-one-third</code> <code>.o-two-thirds</code>, etc.
+  style.
+      .styleguide-spec .o-grid__cell p {
+        background-color: DarkOrchid;
+        text-align: center;
+        color: white;
+      }
+      .styleguide-spec .o-grid__cell:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+  +styleguide-example('objects/grid/examples/default.example')
