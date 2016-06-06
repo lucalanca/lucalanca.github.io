@@ -1,0 +1,14 @@
+.styleguide-spec
+  h3#o-container .o-container
+  p
+    | To have consistent content containers, use the
+    | <code>.o-container</code> object. It sets a max-width and center
+    | aligns everything inside of it (while adding spacing around it).
+  p
+    | It's usually used with a <code>.o-grid</code> inside.
+  style.
+      .styleguide-spec .o-container { background-color: red; }
+      .styleguide-spec .o-container > div { background-color: DarkOrchid;}
+  +styleguide-example('objects/container/examples/default.example')
+  +styleguide-example('objects/container/examples/spaceless.example')
+  +styleguide-example('objects/container/examples/big.example')

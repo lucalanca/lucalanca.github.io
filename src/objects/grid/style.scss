@@ -1,0 +1,27 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+$o-grid-gutter: 1rem;
+.o-grid {
+  margin-left: -$o-grid-gutter;
+  &__cell {
+    padding-left: $o-grid-gutter;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.u-one-whole      { width: (1/1) * 100%; }
+
+.u-one-half       { width: (1/2) * 100%; }
+
+.u-one-third      { width: (1/3) * 100%; }
+.u-two-thirds     { width: (2/3) * 100%; }
+
+.u-one-quarter    { width: (1/4) * 100%; }
+.u-three-quarters { width: (3/4) * 100%; }

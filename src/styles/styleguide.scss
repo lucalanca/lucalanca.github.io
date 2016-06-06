@@ -1,22 +1,32 @@
 @import "settings.colors";
 @import "settings.typography";
 
-@import "elements.base";
-@import "elements.typography";
-
-@import "objects.layout";
-@import "objects.container";
-@import "objects.lists";
-@import "objects.button-unstyled";
-@import "objects.link-unstyled";
-@import "objects.center";
+@import "../elements/**/*.scss";
+@import "../objects/**/*.scss";
+@import "../components/**/*.scss";
 
 
-@import "components.lead";
-@import "components.footer";
-@import "components.links";
+body, .styleguide__wrapper, .styleguide {
+  max-height: 100vh;
+  overflow: hidden;
+}
+.styleguide {
+  display: flex;
+  height: 100%;
+}
+.styleguide__sidebar {
+  // width: 400px;
+}
+.styleguide__content {
+  flex: 1;
+  overflow-y: scroll;
+}
 
-//
-@import "components.buttons";
-@import "components.narrative";
-@import "components.styleguide";
+
+.styleguide-mode {
+  &__button {
+    &.is-hidden {
+      display: none;
+    }
+  }
+}

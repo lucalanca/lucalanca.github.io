@@ -1,0 +1,30 @@
+h3 c-button
+table(style='width: 100%; text-align: center;')
+  thead
+    tr
+      td(style='text-align: left;') tag
+      td Normal
+      td Hover
+      td Focus
+      td Active
+  tbody
+    tr
+      td(style='text-align: left;') anchor
+      td
+        a.c-button.c-button--is-hovered(href='javascript:void()') Normal
+      td
+        a.c-button.c-button--is-focused(href='javascript:void()') Focus
+      td
+        a.c-button.c-button--is-active(href='javascript:void()') Active
+      td
+        a.c-button.c-button--is-disabled(href='javascript:void()', tabindex='-1') Disabled
+    tr
+      td(style='text-align: left;') button
+      td
+        button.c-button.c-button--is-hovered(type='button') Normal
+      td
+        button.c-button.c-button--is-focused(type='button') Focus
+      td
+        button.c-button.c-button--is-active(type='button') Active
+      td
+        button.c-button(type='button', disabled='disabled') Disabled

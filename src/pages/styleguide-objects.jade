@@ -1,6 +1,8 @@
 extends ../templates/template.jade
 
 include ../components/styleguide-navigation/template.jade
+include ../components/styleguide-example/template.jade
+
 
 block head
   style !{require('../styles/styleguide.scss')[0][1]}
@@ -8,22 +10,38 @@ block head
 block body
   main.o-layout__content.styleguide__wrapper(role="main")
     .styleguide
-      .styleguide__sidebar
+      .styleguide__sidebar.o-container
+        .styleguide-mode
+          button.styleguide-mode__button.js-styleguide-show-code.is-hidden(type="button") show code
+          button.styleguide-mode__button.js-styleguide-hide-code(type="button") hide code
         +styleguide-navigation({
           pages: [
-            {name: 'home'      , url: 'styleguide'},
-            {name: 'objects'   , url: 'styleguide-objects',   active: true},
-            {name: 'components', url: 'styleguide-components'}
+            {
+              name: 'home',
+              url: 'styleguide'
+            },
+            {
+              name: 'objects',
+              url: 'styleguide-objects',
+              active: true,
+              children: [
+                'o-button--unstyled', 'o-center','o-container'
+              ]
+            },
+            {
+              name: 'components',
+              url: 'styleguide-components'
+            }
           ]
         }, {}, data)
       .styleguide__content
-        .o-container
-          h2 Objects
-          h3 o-layout
-          h3 o-container
-          h3 o-link--unstyled
-          h3 o-button--unstyled
-          h3 o-list--inline
+        h2 Objects
+        include ../objects/button-unstyled/spec.jade
+        include ../objects/center/spec.jade
+        include ../objects/container/spec.jade
+        include ../objects/layout/spec.jade
+        include ../objects/link-unstyled/spec.jade
+        include ../objects/list/spec.jade
 block scripts
   script.
     WebFontConfig = {

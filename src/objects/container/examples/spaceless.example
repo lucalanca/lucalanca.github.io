@@ -1,0 +1,3 @@
+.o-container.o-container--spaceless
+  div
+    p spaceless container

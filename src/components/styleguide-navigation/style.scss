@@ -1,0 +1,7 @@
+.styleguide-navigation {
+  &__link {
+    &.is-active {
+      font-weight: bold;
+    }
+  }
+}

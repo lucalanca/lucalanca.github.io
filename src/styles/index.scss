@@ -1,15 +1,15 @@
 @import "settings.colors";
 @import "settings.typography";
 
-@import "elements.base";
-@import "elements.typography";
+@import "../elements/base/style";
+@import "../elements/typography/style";
 
-@import "objects.layout";
-@import "objects.container";
-@import "objects.lists";
-@import "objects.center";
+@import "../objects/center/style";
+@import "../objects/container/style";
+@import "../objects/layout/style";
+@import "../objects/list/style";
 
 
-@import "components.lead";
-@import "components.footer";
-@import "components.links";
+@import "../components/footer/style";
+@import "../components/lead/style";
+@import "../components/link/style";

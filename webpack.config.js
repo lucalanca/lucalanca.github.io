@@ -107,13 +107,14 @@ module.exports = {
   devtool: production ? false : 'eval',
   module: {
     preLoaders: [
-      { test: /\.js/, loader: 'eslint' }
+      { test: /\.js/, loader: 'eslint' },
+      { test: /\.scss/, loader: 'import-glob' }
     ],
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: [/\.css$/, /\.scss$/], loaders: ['css', 'postcss', 'sass'] },
+      { test: [/\.css$/, /\.scss$/], loaders: ['css', 'postcss', 'sass'], exclude: [ './src/elements', './src/components', './src/objects' ] },
       { test: /\.html$/, loader: 'html' },
-      { test: /\.jade$/, loader: 'jade' },
+      { test: /\.jade$/, loader: 'jade?pretty=false' },
     ]
   },
   plugins: plugins,
